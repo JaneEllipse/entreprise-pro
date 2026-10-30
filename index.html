@@ -24,6 +24,8 @@
   --good-soft:#12291D; --hl:#F7D917; color-scheme:dark}
 
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:84px}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .wrap{max-width:1080px;margin:0 auto}
@@ -36,13 +38,22 @@ a{color:inherit}
 .btn-go{background:var(--go);color:var(--go-ink)}
 .ico{width:20px;height:20px;flex:none}
 
-.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:18px}
+.top{position:sticky;top:0;z-index:6;display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:12px;
+  background:var(--bg);box-shadow:0 0 0 100vmax var(--bg);clip-path:inset(0 -100vmax);border-bottom:1px solid transparent;transition:border-color .2s}
+.top.scrolled{border-bottom-color:var(--line)}
+.nav{display:flex;align-items:center;gap:22px;font-weight:600;font-size:15px}
+.nav a{text-decoration:none;color:var(--muted)}
+.nav a:hover{color:var(--ink)}
 .brand{font-family:var(--display);font-weight:800;font-size:19px}
 .brand span{color:var(--accent)}
-.top a.small{font-weight:700;font-size:15px;text-decoration:none;color:var(--go)}
+.top a.small{font-weight:700;font-size:15px;text-decoration:none;color:var(--go-ink);background:var(--go);padding:9px 16px;border-radius:999px;white-space:nowrap}
 
 /* Hero */
-.hero{padding-block:20px 40px;display:grid;gap:22px}
+.hero{padding-block:28px 40px;display:grid;gap:22px;position:relative}
+.hero-deco{position:absolute;right:0;top:50px;width:240px;height:240px;opacity:.85;pointer-events:none}
+.trust{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:0;list-style:none;font-size:15px;font-weight:600;color:var(--muted)}
+.trust li{display:flex;align-items:center;gap:6px}
+.trust svg{width:16px;height:16px;color:var(--go)}
 .hero h1{font-size:clamp(34px,6vw,60px);line-height:1.04;font-weight:800;max-width:18ch}
 .hero .lead2{font-family:var(--display);font-size:clamp(22px,3.4vw,32px);font-weight:700;margin:-6px 0 0;color:var(--muted)}
 .ticker{display:flex;align-items:center;gap:16px;background:var(--surface);border:3px solid var(--bad);border-radius:18px;padding:18px 22px;
@@ -81,8 +92,9 @@ section{padding-block:36px}
 
 /* Packs */
 .packs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
-.pack{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px 22px;display:flex;flex-direction:column;gap:14px;min-width:0;position:relative}
-.pack.pick{border:2px solid var(--accent)}
+.pack{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px 22px;display:flex;flex-direction:column;gap:14px;min-width:0;position:relative;transition:transform .2s ease, box-shadow .2s ease}
+.pack:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(31,42,54,.10)}
+.pack.pick{border:2px solid var(--accent);box-shadow:0 10px 30px rgba(41,136,193,.15)}
 .badge{position:absolute;top:-13px;left:22px;background:var(--hl);color:#1F2A36;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 12px;border-radius:999px}
 .pack h3{font-size:26px;font-weight:800;display:flex;align-items:center;gap:10px}
 .dot{width:14px;height:14px;border-radius:50%;flex:none}
@@ -132,16 +144,16 @@ footer details p{margin:6px 0 0;line-height:1.6}
 .brand svg{width:34px;height:34px;flex:none}
 .brand small{display:block;letter-spacing:0;font-family:var(--body);font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.02em}
 
-/* Social proof */
-.proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0;padding:0;list-style:none}
-.proof li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:grid;gap:8px;min-width:0}
+/* Social proof : avis qui défilent (pause au survol) */
+.marquee{overflow:hidden;margin-inline:-16px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.proof{display:flex;gap:14px;margin:0;padding:4px 16px;list-style:none;width:max-content;animation:roll 70s linear infinite}
+.marquee:hover .proof,.marquee:focus-within .proof{animation-play-state:paused}
+@keyframes roll{to{transform:translateX(-50%)}}
+.proof li{width:320px;flex:none;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:grid;gap:12px;align-content:space-between}
 .proof q{font-weight:600;quotes:"« " " »"}
-.proof li{align-content:space-between}
-.proof span{font-size:14px;color:var(--muted)}
-.more{margin-top:12px;background:none;border:0;padding:0}
-.more summary{color:var(--accent);margin-bottom:12px}
-.more .proof{margin-top:12px}
-.stat{margin:0 0 16px;font-weight:700}
+.proof span{font-size:14px;color:var(--muted);display:flex;align-items:center;gap:10px}
+.proof span::before{content:attr(data-i);width:34px;height:34px;border-radius:50%;flex:none;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:14px}
+.stat{margin:0;font-weight:700;color:var(--muted)}
 .stat b{font-family:var(--display);font-size:24px;color:var(--accent)}
 
 /* Bon de commande */
@@ -174,15 +186,19 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
 .sticky .btn{width:100%}
 
 @media (max-width:900px){
+  .hero-deco{display:none}
   .packs,.chain{grid-template-columns:1fr}
   .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
   .sticky{display:block}
   body{padding-bottom:84px}
 }
 @media (max-width:560px){
-  .with,.obj,.steps,.proof{grid-template-columns:1fr}
+  .with,.obj,.steps{grid-template-columns:1fr}
+  .proof li{width:280px}
+  .nav a:not(.small){display:none}
+  .top a.small{padding:8px 12px;font-size:14px}
 }
-@media (prefers-reduced-motion:reduce){.btn,.ticker{transition:none}.btn:hover{transform:none}.ticker .addr.swap{animation:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.marquee{overflow-x:auto}.proof{animation:none}.pack{transition:none}.pack:hover{transform:none}.btn,.ticker{transition:none}.btn:hover{transform:none}.ticker .addr.swap{animation:none}}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -194,10 +210,12 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
 <div class="wrap">
   <header class="top">
     <div class="brand"><svg aria-hidden="true"><use href="#logo"/></svg><div>ELLIPSE <span>FACTORY</span><small>Entreprise Pro</small></div></div>
-    <a class="small js-wa" data-msg="Bonjour, j'ai une question sur Entreprise Pro." href="#packs">Une question ? WhatsApp</a>
+    <nav class="nav"><a href="#packs">Packs</a><a href="#avis">Avis</a><a href="#faq">Questions</a>
+      <a class="small js-wa" data-msg="Bonjour, j'ai une question sur Entreprise Pro." href="#packs">WhatsApp</a></nav>
   </header>
 
   <section class="hero" aria-labelledby="h1">
+    <svg class="hero-deco" aria-hidden="true"><use href="#logo"/></svg>
     <h1 id="h1">Votre entreprise, c'est sérieux.</h1>
     <p class="lead2">Mais votre email finit par…</p>
     <div class="ticker" id="ticker" aria-live="off">
@@ -208,6 +226,11 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
     <p class="promise">On vous fait votre email pro et votre site. Rapidement. Tout est inclus pour 1 an.</p>
     <div class="from"><span>À partir de</span><b>65 000 FCFA</b></div>
     <div><a class="btn btn-go" href="#packs">Je choisis mon pack</a></div>
+    <ul class="trust">
+      <li><svg><use href="#i-ok"/></svg>+50 entreprises équipées</li>
+      <li><svg><use href="#i-ok"/></svg>Paiement Mobile Money</li>
+      <li><svg><use href="#i-ok"/></svg>Facture remise</li>
+    </ul>
   </section>
 
   <section aria-labelledby="h-pb">
@@ -230,20 +253,18 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
     </ul>
   </section>
 
-  <section aria-labelledby="h-proof">
-    <div class="sec-head"><h2 id="h-proof">Ils nous font confiance</h2></div>
-    <ul class="proof">
-      <li><q>Avant, j'utilisais mon Gmail pour envoyer les devis. Maintenant, j'ai une adresse avec le nom de mon entreprise. C'est beaucoup plus professionnel. Et ils ont tout installé pour moi.</q><span>Koffi M., entrepreneur, Lomé</span></li>
-      <li><q>Maintenant, quand un client me demande le site de mon entreprise, j'ai quelque chose à lui envoyer. Avant, je n'avais rien. Le site est simple, mais il présente bien nos activités.</q><span>Adama C., BTP, Abidjan</span></li>
-      <li><q>Moi, je ne connais pas trop ces histoires de site internet. Je leur ai envoyé les informations de mon entreprise et ils se sont occupés du reste. Franchement, ça m'a arrangé.</q><span>Aïcha S., esthéticienne, Cotonou</span></li>
-    </ul>
-    <details class="more"><summary>Voir 3 autres avis</summary>
-      <ul class="proof">
-        <li><q>Je pensais que faire un site et avoir des emails professionnels allait coûter beaucoup plus cher. Finalement, j'ai pu faire les deux avec le même budget.</q><span>Mamadou D., gérant de PME, Dakar</span></li>
-        <li><q>Ce que j'ai apprécié, c'est qu'ils ont pris le temps de m'expliquer. Même pour utiliser mon email sur le téléphone, ils m'ont aidé.</q><span>Fatoumata T., consultante, Bamako</span></li>
-        <li><q>Travail bien fait. J'ai reçu mon site et mes adresses email comme convenu. Rien à dire.</q><span>Serge O., directeur de cabinet, Ouagadougou</span></li>
+  <section id="avis" aria-labelledby="h-proof">
+    <div class="sec-head"><h2 id="h-proof">Ils nous font confiance</h2><p class="stat"><b>+50</b> entreprises équipées en Afrique de l'Ouest</p></div>
+    <div class="marquee">
+      <ul class="proof" id="proof">
+        <li><q>Avant, j'utilisais mon Gmail pour envoyer les devis. Maintenant, j'ai une adresse avec le nom de mon entreprise. C'est beaucoup plus professionnel. Et ils ont tout installé pour moi.</q><span data-i="K">Koffi M., entrepreneur, Lomé</span></li>
+        <li><q>Maintenant, quand un client me demande le site de mon entreprise, j'ai quelque chose à lui envoyer. Avant, je n'avais rien. Le site est simple, mais il présente bien nos activités.</q><span data-i="A">Adama C., BTP, Abidjan</span></li>
+        <li><q>Moi, je ne connais pas trop ces histoires de site internet. Je leur ai envoyé les informations de mon entreprise et ils se sont occupés du reste. Franchement, ça m'a arrangé.</q><span data-i="A">Aïcha S., esthéticienne, Cotonou</span></li>
+        <li><q>Je pensais que faire un site et avoir des emails professionnels allait coûter beaucoup plus cher. Finalement, j'ai pu faire les deux avec le même budget.</q><span data-i="M">Mamadou D., gérant de PME, Dakar</span></li>
+        <li><q>Ce que j'ai apprécié, c'est qu'ils ont pris le temps de m'expliquer. Même pour utiliser mon email sur le téléphone, ils m'ont aidé.</q><span data-i="F">Fatoumata T., consultante, Bamako</span></li>
+        <li><q>Travail bien fait. J'ai reçu mon site et mes adresses email comme convenu. Rien à dire.</q><span data-i="S">Serge O., directeur de cabinet, Ouagadougou</span></li>
       </ul>
-    </details>
+    </div>
   </section>
 
   <section id="packs" aria-labelledby="h-packs">
@@ -327,7 +348,7 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
     </div>
   </section>
 
-  <section aria-labelledby="h-faq">
+  <section id="faq" aria-labelledby="h-faq">
     <div class="sec-head"><h2 id="h-faq">Vos questions</h2></div>
     <div class="faq">
       <details><summary>Je n'y connais rien en informatique. C'est un problème ?</summary><p>Non. On s'occupe de tout : le site, les adresses, l'installation. Vous nous donnez vos informations (logo, services, photos, contacts), on fait le reste.</p></details>
@@ -437,6 +458,22 @@ form.addEventListener("submit", e => {
 });
 document.querySelectorAll(".js-wa-display").forEach(el => el.textContent = WA_DISPLAY);
 document.getElementById("yr").textContent = new Date().getFullYear();
+
+/* Avis : on double la liste pour un défilement sans fin */
+(function(){
+  const ul = document.getElementById("proof");
+  let reduce = false;
+  try { reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch(e) {}
+  if (reduce) return;
+  [...ul.children].forEach(li => { const c = li.cloneNode(true); c.setAttribute("aria-hidden","true"); ul.appendChild(c); });
+})();
+
+/* En-tête : trait de séparation après défilement */
+(function(){
+  const top = document.querySelector(".top");
+  const f = () => top.classList.toggle("scrolled", window.scrollY > 10);
+  window.addEventListener("scroll", f, {passive:true}); f();
+})();
 document.querySelectorAll(".js-wa").forEach(a => {
   a.href = waLink(a.dataset.msg); a.target = "_blank"; a.rel = "noopener";
 });

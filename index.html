@@ -233,7 +233,7 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
     <ul class="trust">
       <li><svg><use href="#i-ok"/></svg>+50 entreprises équipées</li>
       <li><svg><use href="#i-ok"/></svg>Paiement Mobile Money</li>
-      <li><svg><use href="#i-ok"/></svg>Facture remise</li>
+      <li><svg><use href="#i-ok"/></svg>TVA incluse, facture remise</li>
     </ul>
   </section>
 
@@ -277,8 +277,8 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
       <article class="pack">
         <h3><span class="dot" style="background:#0E7A43"></span>SOLO</h3>
         <p class="for">Pour l'indépendant</p>
-        <div class="price"><b>65 000</b><span>FCFA</span></div>
-        <p class="allin">Tout inclus pour 1 an</p>
+        <div class="price"><b>65 000</b><span>FCFA TTC</span></div>
+        <p class="allin">Tout inclus pour 1 an · TVA incluse</p>
         <ul class="feat">
           <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>1 email pro</span></li>
           <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>Nom de domaine</span></li>
@@ -293,8 +293,8 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
       <article class="pack">
         <h3><span class="dot" style="background:#2988C1"></span>ÉQUIPE</h3>
         <p class="for">Pour le cabinet ou la PME</p>
-        <div class="price"><b>150 000</b><span>FCFA</span></div>
-        <p class="allin">Tout inclus pour 1 an</p>
+        <div class="price"><b>150 000</b><span>FCFA TTC</span></div>
+        <p class="allin">Tout inclus pour 1 an · TVA incluse</p>
         <ul class="feat">
           <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>5 emails pro</span></li>
           <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>Nom de domaine</span></li>
@@ -310,8 +310,8 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
         <span class="badge">Recommandé</span>
         <h3><span class="dot" style="background:#B4413B"></span>VITRINE</h3>
         <p class="for">Pour exister sur Google</p>
-        <div class="price"><b>300 000</b><span>FCFA</span></div>
-        <p class="allin">Tout inclus pour 1 an</p>
+        <div class="price"><b>300 000</b><span>FCFA TTC</span></div>
+        <p class="allin">Tout inclus pour 1 an · TVA incluse</p>
         <ul class="feat">
           <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>1 email pro</span></li>
           <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>Nom de domaine</span></li>
@@ -368,12 +368,12 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
   <section class="final" aria-labelledby="h-final">
     <h2 id="h-final">Vous demandez encore de l'argent à vos clients avec une adresse gratuite ?</h2>
     <h2 class="hl">Changez ça aujourd'hui.</h2>
-    <p>À partir de 65 000 FCFA. Tout inclus pour 1 an.</p>
+    <p>À partir de 65 000 FCFA TTC. Tout inclus pour 1 an.</p>
     <a class="btn btn-go" href="#packs">Je choisis mon pack</a>
   </section>
 
   <footer>
-    <p style="margin:0">Entreprise Pro est un service Ellipse Factory · Prix en FCFA. La prestation et les abonnements aux outils de la 1ère année sont inclus. À partir de la 2e année, les abonnements sont payés directement par le client.</p>
+    <p style="margin:0">Entreprise Pro est un service Ellipse Factory · Prix en FCFA TTC (TVA 18 % incluse). La prestation et les abonnements aux outils de la 1ère année sont inclus. À partir de la 2e année, les abonnements sont payés directement par le client.</p>
     <details><summary>Mentions légales</summary>
       <p><b>ELLIPSE FACTORY</b>, agence de communication &amp; production audiovisuelle.<br>
       Lomé, Togo. Léo 2000, non loin de l'Antigang.<br>
@@ -443,16 +443,16 @@ form.addEventListener("submit", e => {
     "Tél. : " + f.get("tel") + "\n" +
     (dom ? "Domaine souhaité : " + dom + "\n" : "") +
     "\nPack " + pack.pack + " : " + pack.desc + "\n" +
-    "Total : " + pack.price + " FCFA\n" +
-    "À payer à la commande : " + pack.first + " FCFA\n\n" +
+    "Total : " + pack.price + " FCFA TTC (TVA incluse)\n" +
+    "À payer à la commande : " + pack.first + " FCFA TTC\n\n" +
     "Une facture sera remise pour chaque paiement.";
   document.getElementById("bc").innerHTML =
     '<div class="bc-top"><div class="brand"><svg aria-hidden="true"><use href="#logo"/></svg><div>ELLIPSE <span>FACTORY</span><small>Entreprise Pro</small></div></div>' +
     '<div class="ref"><b>BON DE COMMANDE</b>N° ' + num + '<br>Date : ' + date + '</div></div>' +
     '<div><h4>Client</h4><p>' + esc(f.get("nom")) + ' · ' + esc(f.get("entreprise")) + '<br>Tél. : ' + esc(f.get("tel")) + (dom ? '<br>Domaine souhaité : ' + esc(dom) : '') + '</p></div>' +
-    '<table><tr><th>Désignation</th><th class="num">Montant (FCFA)</th></tr>' +
+    '<table><tr><th>Désignation</th><th class="num">Montant (FCFA TTC)</th></tr>' +
     '<tr><td>Pack ' + esc(pack.pack) + '<br><small>' + esc(pack.desc) + '</small></td><td class="num">' + pack.price + '</td></tr>' +
-    '<tr class="tot"><td>Total</td><td class="num">' + pack.price + '</td></tr>' +
+    '<tr class="tot"><td>Total TTC <small>(TVA 18 % incluse)</small></td><td class="num">' + pack.price + '</td></tr>' +
     '<tr class="tot"><td>À payer à la commande</td><td class="num">' + pack.first + '</td></tr></table>' +
     '<p class="pay">Paiement : Mobile Money (Flooz / Mixx by Yas), virement ou espèces contre reçu.<br><b>Une facture vous est remise pour chaque paiement.</b></p>';
   const link = waLink(txt);

@@ -1,0 +1,442 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Entreprise Pro · Ellipsefactory</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Entreprise Pro par Ellipsefactory : ton email pro et ton site web, faits pour toi. Tout inclus pour 1 an, à partir de 65 000 FCFA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: one column. Hero = rotating address (free mail ✗ → company domain ✓); problem → solution → 3 packs → 4 steps → objections → final CTA. */
+:root{
+  --bg:#F5F7FA; --surface:#FFFFFF; --ink:#0F1C2E; --muted:#5A6678; --line:#DCE2EA;
+  --accent:#1747C9; --accent-soft:#E6ECFB; --go:#0E7A43; --go-ink:#FFFFFF; --bad:#B4413B; --bad-soft:#FBECEA;
+  --good-soft:#E5F4EC; --hl:#F3B21B;
+  --display:"Libre Franklin", "Segoe UI", system-ui, sans-serif;
+  --body:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0C1420; --surface:#131E2E; --ink:#E8EEF6; --muted:#9AA7B8; --line:#24324A;
+  --accent:#7FA2FF; --accent-soft:#1A2A4A; --go:#23A863; --go-ink:#06140C; --bad:#F08A80; --bad-soft:#2A1A1D;
+  --good-soft:#12291D; --hl:#F3B21B; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0C1420; --surface:#131E2E; --ink:#E8EEF6; --muted:#9AA7B8; --line:#24324A;
+  --accent:#7FA2FF; --accent-soft:#1A2A4A; --go:#23A863; --go-ink:#06140C; --bad:#F08A80; --bad-soft:#2A1A1D;
+  --good-soft:#12291D; --hl:#F3B21B; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1080px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-0.01em}
+a{color:inherit}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 24px;border-radius:12px;
+  font-weight:700;font-size:17px;text-decoration:none;border:2px solid transparent;transition:transform .15s ease, filter .15s ease}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.05)}
+.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.btn-go{background:var(--go);color:var(--go-ink)}
+.ico{width:20px;height:20px;flex:none}
+
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:18px}
+.brand{font-family:var(--display);font-weight:800;font-size:19px}
+.brand span{color:var(--accent)}
+.top a.small{font-weight:700;font-size:15px;text-decoration:none;color:var(--go)}
+
+/* Hero */
+.hero{padding-block:20px 40px;display:grid;gap:22px}
+.hero h1{font-size:clamp(34px,6vw,60px);line-height:1.04;font-weight:800;max-width:18ch}
+.hero .lead2{font-family:var(--display);font-size:clamp(22px,3.4vw,32px);font-weight:700;margin:-6px 0 0;color:var(--muted)}
+.ticker{display:flex;align-items:center;gap:16px;background:var(--surface);border:3px solid var(--bad);border-radius:18px;padding:18px 22px;
+  min-height:96px;max-width:640px;transition:border-color .25s ease, background-color .25s ease}
+.ticker.ok{border-color:var(--go);background:var(--good-soft)}
+.ticker .mark{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;flex:none;background:var(--bad);color:#FFFFFF}
+.ticker.ok .mark{background:var(--go);color:var(--go-ink)}
+.ticker .addr{font-family:var(--display);font-weight:800;font-size:clamp(20px,4vw,36px);overflow-wrap:anywhere;min-width:0;line-height:1.15}
+.ticker .addr .pre{color:var(--muted);font-weight:700}
+.ticker .addr .dom{color:var(--bad)}
+.ticker.ok .addr .dom{color:var(--go)}
+.ticker .addr.swap{animation:pop .3s ease}
+@keyframes pop{from{opacity:.2;transform:translateY(6px)}to{opacity:1;transform:none}}
+.hero .warn{font-family:var(--display);font-size:clamp(22px,3.2vw,30px);font-weight:800;color:var(--bad);margin:0}
+.hero .promise{font-size:clamp(18px,2.4vw,22px);font-weight:700;margin:0;max-width:52ch}
+.from{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.from span{font-weight:600;color:var(--muted)}
+.from b{font-family:var(--display);font-size:clamp(28px,4vw,38px);font-weight:800}
+
+section{padding-block:36px}
+.sec-head{display:grid;gap:8px;margin-bottom:22px}
+.sec-head h2{font-size:clamp(26px,4vw,38px);font-weight:800}
+
+/* Problem */
+.chain{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;list-style:none;margin:0;padding:0}
+.chain li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:8px;min-width:0;align-content:start}
+.chain li b{font-family:var(--display);font-size:20px}
+.chain li span{color:var(--muted)}
+.punch{margin:20px 0 0;font-family:var(--display);font-size:clamp(22px,3.2vw,30px);font-weight:800;color:var(--bad)}
+
+/* With us */
+.with{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;list-style:none;margin:0;padding:0}
+.with li{background:var(--good-soft);border-radius:14px;padding:18px 20px;display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;font-size:18px;min-width:0}
+.with li svg{color:var(--go)}
+.with li b{font-weight:700}
+
+/* Packs */
+.packs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
+.pack{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px 22px;display:flex;flex-direction:column;gap:14px;min-width:0;position:relative}
+.pack.pick{border:2px solid var(--accent)}
+.badge{position:absolute;top:-13px;left:22px;background:var(--hl);color:#1E1500;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 12px;border-radius:999px}
+.pack h3{font-size:26px;font-weight:800;display:flex;align-items:center;gap:10px}
+.dot{width:14px;height:14px;border-radius:50%;flex:none}
+.pack .for{margin:-6px 0 0;color:var(--muted);font-weight:600}
+.price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.price b{font-family:var(--display);font-size:clamp(36px,4.6vw,44px);font-weight:800;font-variant-numeric:tabular-nums;line-height:1}
+.price span{font-weight:600;color:var(--muted)}
+.allin{margin:-6px 0 0;font-size:15px;font-weight:700;color:var(--go)}
+.feat{list-style:none;margin:0;padding:0;display:grid;gap:9px;font-size:16px}
+.feat li{display:grid;grid-template-columns:20px 1fr;gap:8px;align-items:start}
+.feat li.no{color:var(--muted)}
+.feat svg{margin-top:3px}
+.feat .y svg{color:var(--go)}
+.feat .no svg{color:var(--bad)}
+.delay{font-size:15px;color:var(--muted);margin:auto 0 0;padding-top:12px;border-top:1px dashed var(--line)}
+.delay b{color:var(--ink)}
+.pack .btn{width:100%}
+.renew{margin:18px 0 0;font-size:15px;color:var(--muted);max-width:76ch}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:6px;min-width:0;align-content:start}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:800;font-size:16px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+.steps h3{font-size:19px}
+.steps p{margin:0;color:var(--muted)}
+
+/* Objections */
+.obj{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.obj div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:6px;min-width:0}
+.obj q{font-family:var(--display);font-weight:800;font-size:20px;quotes:"« " " »"}
+.obj p{margin:0;color:var(--muted);font-weight:600}
+
+.final{background:var(--ink);color:var(--bg);border-radius:20px;padding:36px 26px;display:grid;gap:14px;justify-items:start;margin-block:20px 40px}
+.final h2{font-size:clamp(26px,4.4vw,40px);font-weight:800}
+.final p{margin:0;font-weight:700;opacity:.9}
+.final h2.hl{color:var(--hl)}
+.terms{margin-top:18px;background:var(--accent-soft);border-radius:14px;padding:16px 18px;display:grid;gap:6px;font-size:16px}
+.terms p{margin:0}
+.faq{display:grid;gap:10px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+summary{cursor:pointer;font-weight:700}
+details p{margin:10px 0 0;color:var(--muted)}
+footer{font-size:13px;color:var(--muted);padding-block:0 32px;display:grid;gap:10px}
+footer details{background:none;border:0;padding:0}
+footer details p{margin:6px 0 0;line-height:1.6}
+.brand small{display:block;font-family:var(--body);font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.02em}
+
+/* Social proof */
+.proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0;padding:0;list-style:none}
+.proof li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:grid;gap:8px;min-width:0}
+.proof q{font-weight:600}
+.proof span{font-size:14px;color:var(--muted)}
+.stat{margin:0 0 16px;font-weight:700}
+.stat b{font-family:var(--display);font-size:24px;color:var(--accent)}
+
+/* Bon de commande */
+dialog{border:0;border-radius:16px;padding:0;width:min(520px,100% - 32px);background:var(--surface);color:var(--ink)}
+dialog::backdrop{background:rgba(8,14,24,.6)}
+.dlg{padding:24px 22px;display:grid;gap:14px}
+.dlg h2{font-size:24px}
+.dlg label{display:grid;gap:4px;font-weight:600;font-size:15px}
+.dlg input{font:inherit;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+.dlg .note{margin:0;font-size:14px;color:var(--muted)}
+.dlg .row{display:flex;gap:10px;flex-wrap:wrap}
+.btn-ghost{background:none;color:var(--ink);border-color:var(--line)}
+.bc{border:1px dashed var(--line);border-radius:12px;padding:14px 16px;white-space:pre-wrap;font-size:15px;margin:0;font-family:var(--body)}
+@media print{body>*:not(dialog){display:none!important}dialog{position:static;width:auto}.dlg .row,.dlg .note.hide-print{display:none}}
+
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:5;background:var(--surface);border-top:1px solid var(--line);
+  padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));display:none}
+.sticky .btn{width:100%}
+
+@media (max-width:900px){
+  .packs,.chain{grid-template-columns:1fr}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sticky{display:block}
+  body{padding-bottom:84px}
+}
+@media (max-width:560px){
+  .with,.obj,.steps,.proof{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.btn,.ticker{transition:none}.btn:hover{transform:none}.ticker .addr.swap{animation:none}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-ok" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-no" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
+</svg>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">Ellipse<span>factory</span><small>Entreprise Pro</small></div>
+    <a class="small js-wa" data-msg="Bonjour, j'ai une question sur Entreprise Pro." href="#packs">Une question ? WhatsApp</a>
+  </header>
+
+  <section class="hero" aria-labelledby="h1">
+    <h1 id="h1">Ton entreprise, c'est sérieux.</h1>
+    <p class="lead2">Mais ton email finit par…</p>
+    <div class="ticker" id="ticker" aria-live="off">
+      <span class="mark" id="mark"><svg class="ico" style="width:24px;height:24px"><use href="#i-no"/></svg></span>
+      <span class="addr" id="addr"><span class="pre">ton.nom</span><span class="dom">@gmail.com</span></span>
+    </div>
+    <p class="warn">Tes clients pensent que tu n'es pas sérieux.</p>
+    <p class="promise">On te fait ton email pro et ton site. Rapidement. Tout est inclus pour 1 an.</p>
+    <div class="from"><span>À partir de</span><b>65 000 FCFA</b></div>
+    <div><a class="btn btn-go" href="#packs">Je choisis mon pack</a></div>
+  </section>
+
+  <section aria-labelledby="h-pb">
+    <div class="sec-head"><h2 id="h-pb">Ce qui se passe quand tu n'as pas d'email pro ni de site</h2></div>
+    <ol class="chain">
+      <li><b>Le client reçoit ton devis.</b><span>Il doute.</span></li>
+      <li><b>Il te cherche sur Google.</b><span>Il ne trouve rien.</span></li>
+      <li><b>Il va chez ton concurrent.</b><span>Et tu ne le sauras jamais.</span></li>
+    </ol>
+    <p class="punch">Tu perds des clients. Et tu ne le sais même pas.</p>
+  </section>
+
+  <section aria-labelledby="h-with">
+    <div class="sec-head"><h2 id="h-with">Avec nous</h2></div>
+    <ul class="with">
+      <li><svg class="ico"><use href="#i-ok"/></svg><span>Tes adresses : <b>contact@tonentreprise.com</b>, <b>secretariat@tonentreprise.com</b></span></li>
+      <li><svg class="ico"><use href="#i-ok"/></svg><span>Ton site : <b>on te trouve sur Google quand on cherche ton nom</b></span></li>
+      <li><svg class="ico"><use href="#i-ok"/></svg><span>Tu fais <b>sérieux</b> dès le premier message</span></li>
+      <li><svg class="ico"><use href="#i-ok"/></svg><span><b>Tu ne touches à rien.</b> On fait tout.</span></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="h-proof">
+    <div class="sec-head"><h2 id="h-proof">Ils nous font confiance</h2></div>
+    <!-- À REMPLACER : chiffre réel et vrais avis clients (avec leur accord) -->
+    <p class="stat"><b>+XX</b> entreprises équipées par Ellipsefactory</p>
+    <ul class="proof">
+      <li><q>Avis client à remplacer.</q><span>Prénom N., Entreprise, Ville</span></li>
+      <li><q>Avis client à remplacer.</q><span>Prénom N., Entreprise, Ville</span></li>
+      <li><q>Avis client à remplacer.</q><span>Prénom N., Entreprise, Ville</span></li>
+    </ul>
+  </section>
+
+  <section id="packs" aria-labelledby="h-packs">
+    <div class="sec-head"><h2 id="h-packs">Les packs</h2></div>
+    <div class="packs">
+      <article class="pack">
+        <h3><span class="dot" style="background:#0E7A43"></span>SOLO</h3>
+        <p class="for">Pour l'indépendant</p>
+        <div class="price"><b>65 000</b><span>FCFA</span></div>
+        <p class="allin">Tout inclus pour 1 an</p>
+        <ul class="feat">
+          <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>1 email pro</span></li>
+          <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>Nom de domaine</span></li>
+          <li class="no"><svg class="ico"><use href="#i-no"/></svg><span>Site web</span></li>
+          <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>1 mois de maintenance gratuit</span></li>
+          <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>Aucun frais caché</span></li>
+        </ul>
+        <p class="delay">Livré en <b>3 à 7 jours</b><br>Paiement : <b>en une fois à la commande</b></p>
+        <a class="btn btn-go js-book" data-pack="SOLO (65 000 FCFA)" href="#packs">Je prends SOLO</a>
+      </article>
+
+      <article class="pack">
+        <h3><span class="dot" style="background:#1747C9"></span>ÉQUIPE</h3>
+        <p class="for">Pour le cabinet ou la PME</p>
+        <div class="price"><b>150 000</b><span>FCFA</span></div>
+        <p class="allin">Tout inclus pour 1 an</p>
+        <ul class="feat">
+          <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>5 emails pro</span></li>
+          <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>Nom de domaine</span></li>
+          <li class="no"><svg class="ico"><use href="#i-no"/></svg><span>Site web</span></li>
+          <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>1 mois de maintenance gratuit</span></li>
+          <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>Aucun frais caché</span></li>
+        </ul>
+        <p class="delay">Livré en <b>3 à 7 jours</b><br>Paiement : <b>en une fois à la commande</b></p>
+        <a class="btn btn-go js-book" data-pack="ÉQUIPE (150 000 FCFA)" href="#packs">Je prends ÉQUIPE</a>
+      </article>
+
+      <article class="pack pick">
+        <span class="badge">Recommandé</span>
+        <h3><span class="dot" style="background:#B4413B"></span>VITRINE</h3>
+        <p class="for">Pour exister sur Google</p>
+        <div class="price"><b>300 000</b><span>FCFA</span></div>
+        <p class="allin">Tout inclus pour 1 an</p>
+        <ul class="feat">
+          <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>1 email pro</span></li>
+          <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>Nom de domaine</span></li>
+          <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span><b>Site web 5 pages</b></span></li>
+          <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>1 mois de maintenance gratuit</span></li>
+          <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>Aucun frais caché</span></li>
+        </ul>
+        <p class="delay">Livré en <b>10 à 15 jours ouvrés</b><br>Paiement : <b>50 % à la commande, 50 % à la mise en ligne</b></p>
+        <a class="btn btn-go js-book" data-pack="VITRINE (300 000 FCFA)" href="#packs">Je prends VITRINE</a>
+      </article>
+    </div>
+    <p class="renew">Les abonnements de la 1ère année sont offerts. À partir de la 2e année, tu les paies directement au fournisseur (nom de domaine, emails, hébergement du site). On te prévient avant la date.</p>
+  </section>
+
+  <section aria-labelledby="h-steps">
+    <div class="sec-head"><h2 id="h-steps">Comment commander</h2></div>
+    <ol class="steps">
+      <li><h3>Vous validez votre commande</h3><p>Cliquez sur « Je prends ». Vous recevez votre bon de commande, et il nous arrive par WhatsApp.</p></li>
+      <li><h3>On confirme par appel</h3><p>On valide avec vous le nom et les adresses. 10 minutes.</p></li>
+      <li><h3>Vous payez</h3><p>SOLO et ÉQUIPE : en une fois. VITRINE : la moitié pour lancer le travail. Vous recevez une facture.</p></li>
+      <li><h3>On livre</h3><p>On vous montre le résultat. Tout est payé : on met en ligne et on vous remet les accès.</p></li>
+    </ol>
+    <div class="terms">
+      <p><b>SOLO et ÉQUIPE : 100 % à la commande.</b></p>
+      <p><b>VITRINE : 50 % à la commande, 50 % à la mise en ligne.</b></p>
+      <p><b>Une facture vous est remise pour chaque paiement.</b></p>
+      <p>Le délai commence quand on a reçu le paiement (l'avance pour VITRINE) et tous vos éléments. Mise en ligne et remise des accès à réception du paiement complet.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-obj">
+    <div class="sec-head"><h2 id="h-obj">Tu hésites ?</h2></div>
+    <div class="obj">
+      <div><q>Mon Gmail suffit.</q><p>Non. Tes clients voient la différence.</p></div>
+      <div><q>Je suis petit.</q><p>Justement. Tu dois faire sérieux.</p></div>
+      <div><q>Je ferai ça plus tard.</q><p>Tu perds des clients en attendant.</p></div>
+      <div><q>Je ne connais rien en technique.</q><p>Pas besoin. On s'occupe de tout.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-faq">
+    <div class="sec-head"><h2 id="h-faq">Vos questions</h2></div>
+    <div class="faq">
+      <details><summary>Je n'y connais rien en informatique. C'est un problème ?</summary><p>Non. On s'occupe de tout : le site, les adresses, l'installation. Vous nous donnez vos informations (logo, services, photos, contacts), on fait le reste.</p></details>
+      <details><summary>Qu'est-ce qu'on met sur le site ?</summary><p>Qui vous êtes, ce que vous faites, vos réalisations et comment vous joindre. Jusqu'à 5 pages, lisibles sur téléphone.</p></details>
+      <details><summary>Le nom de domaine, c'est quoi ?</summary><p>C'est le nom de votre entreprise sur internet, par exemple laourou.com. C'est ce qui s'écrit après le @ dans votre adresse.</p></details>
+      <details><summary>Le nom est à moi ?</summary><p>Oui. Il est enregistré au nom de votre entreprise.</p></details>
+      <details><summary>Je peux lire mes emails sur mon téléphone ?</summary><p>Oui. On installe tout sur votre téléphone et votre ordinateur.</p></details>
+      <details><summary>Et si vous ne livrez pas dans le délai ?</summary><p>On vous rembourse notre prestation, si le retard vient de nous. Les abonnements déjà souscrits à votre nom restent à vous. Le délai compte à partir du jour où on a reçu votre paiement et tous les éléments nécessaires (nom choisi, logo, textes, photos, contacts). Si un élément arrive en retard de votre côté, le délai est décalé d'autant.</p></details>
+      <details><summary>Et après la 1ère année ?</summary><p>Votre adresse et votre site continuent de fonctionner tant que les abonnements aux outils sont renouvelés. À partir de la 2e année, vous les payez directement au fournisseur, une fois par an. On vous prévient avant la date. La prestation n'est pas à repayer.</p></details>
+    </div>
+  </section>
+
+  <section class="final" aria-labelledby="h-final">
+    <h2 id="h-final">Tu demandes encore de l'argent à tes clients avec une adresse gratuite ?</h2>
+    <h2 class="hl">Change ça aujourd'hui.</h2>
+    <p>À partir de 65 000 FCFA. Tout inclus pour 1 an.</p>
+    <a class="btn btn-go" href="#packs">Je choisis mon pack</a>
+  </section>
+
+  <footer>
+    <p style="margin:0">Entreprise Pro est un service Ellipsefactory · Prix en FCFA. La prestation et les abonnements aux outils de la 1ère année sont inclus. À partir de la 2e année, les abonnements sont payés directement au fournisseur.</p>
+    <!-- À COMPLÉTER : informations légales réelles -->
+    <details><summary>Mentions légales</summary>
+      <p><b>Éditeur :</b> Ellipsefactory, [forme juridique] au capital de [montant] FCFA<br>
+      <b>RCCM :</b> [numéro] · <b>NCC :</b> [numéro]<br>
+      <b>Siège :</b> [adresse, ville, pays]<br>
+      <b>Contact :</b> [email] · <span class="js-wa-display"></span><br>
+      <b>Responsable de la publication :</b> [nom]<br>
+      <b>Hébergeur :</b> [nom, adresse]</p>
+      <p><b>Données personnelles :</b> les informations du bon de commande servent uniquement à traiter votre commande. Elles ne sont ni vendues ni partagées. Pour les modifier ou les supprimer, écrivez-nous.</p>
+      <p><b>Facturation :</b> une facture est émise pour chaque paiement.</p>
+    </details>
+    <p style="margin:0">© <span id="yr"></span> Ellipsefactory</p>
+  </footer>
+</div>
+
+<dialog id="order">
+  <form class="dlg" id="order-form" method="dialog">
+    <h2>Bon de commande</h2>
+    <p class="note">Pack : <b id="o-pack"></b></p>
+    <label>Votre nom<input name="nom" required autocomplete="name"></label>
+    <label>Nom de l'entreprise<input name="entreprise" required autocomplete="organization"></label>
+    <label>Téléphone (WhatsApp)<input name="tel" type="tel" required autocomplete="tel"></label>
+    <label>Nom de domaine souhaité (facultatif)<input name="domaine" placeholder="tonentreprise.com"></label>
+    <p class="note">Une facture vous est remise pour chaque paiement.</p>
+    <div class="row">
+      <button class="btn btn-go" type="submit">Je valide ma commande</button>
+      <button class="btn btn-ghost" type="button" data-close>Annuler</button>
+    </div>
+  </form>
+  <div class="dlg" id="order-done" hidden>
+    <h2>Commande validée</h2>
+    <pre class="bc" id="bc"></pre>
+    <p class="note">WhatsApp s'ouvre avec votre bon de commande : appuyez sur <b>Envoyer</b> pour nous le transmettre. On vous rappelle pour confirmer. Vous recevrez une facture à chaque paiement.</p>
+    <div class="row">
+      <a class="btn btn-go" id="bc-wa" target="_blank" rel="noopener">Envoyer sur WhatsApp</a>
+      <button class="btn btn-ghost" type="button" onclick="window.print()">Imprimer / PDF</button>
+      <button class="btn btn-ghost" type="button" data-close>Fermer</button>
+    </div>
+  </div>
+</dialog>
+
+<div class="sticky"><a class="btn btn-go" href="#packs">Je choisis mon pack · dès 65 000 FCFA</a></div>
+
+<script>
+/* ===== À RENSEIGNER ===== numéro WhatsApp qui reçoit les bons de commande */
+const WA_NUMBER = "225XXXXXXXXXX"; /* format international sans + ni espaces */
+const WA_DISPLAY = "+225 XX XX XX XX XX";
+
+
+function waLink(msg){ return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg); }
+
+/* Commande : formulaire → bon de commande affiché + envoyé sur WhatsApp */
+const dlg = document.getElementById("order"), form = document.getElementById("order-form"), done = document.getElementById("order-done");
+let pack = "";
+document.querySelectorAll(".js-book").forEach(a => a.addEventListener("click", e => {
+  e.preventDefault(); pack = a.dataset.pack;
+  document.getElementById("o-pack").textContent = pack;
+  form.hidden = false; done.hidden = true; dlg.showModal();
+}));
+dlg.querySelectorAll("[data-close]").forEach(b => b.addEventListener("click", () => dlg.close()));
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  const f = new FormData(form), d = new Date();
+  const num = "BC-" + d.toISOString().slice(0,10).replace(/-/g,"") + "-" + String(Math.floor(Math.random()*9000)+1000);
+  const txt = "BON DE COMMANDE " + num + "\n" +
+    "Ellipsefactory · Entreprise Pro\n" +
+    "Date : " + d.toLocaleDateString("fr-FR") + "\n\n" +
+    "Pack : " + pack + "\n" +
+    "Nom : " + f.get("nom") + "\n" +
+    "Entreprise : " + f.get("entreprise") + "\n" +
+    "Téléphone : " + f.get("tel") + "\n" +
+    (f.get("domaine") ? "Domaine souhaité : " + f.get("domaine") + "\n" : "") +
+    "\nUne facture sera remise pour chaque paiement.";
+  document.getElementById("bc").textContent = txt;
+  const link = waLink(txt);
+  document.getElementById("bc-wa").href = link;
+  form.hidden = true; done.hidden = false;
+  window.open(link, "_blank", "noopener");
+});
+document.querySelectorAll(".js-wa-display").forEach(el => el.textContent = WA_DISPLAY);
+document.getElementById("yr").textContent = new Date().getFullYear();
+document.querySelectorAll(".js-wa").forEach(a => {
+  a.href = waLink(a.dataset.msg); a.target = "_blank"; a.rel = "noopener";
+});
+
+/* Hero ticker: 1,5 s per free address, 2 s per pro address, then loop */
+(function(){
+  const seq = [
+    {pre:"ton.nom", dom:"@gmail.com", ok:false},
+    {pre:"ton.nom", dom:"@yahoo.fr", ok:false},
+    {pre:"ton.nom", dom:"@hotmail.com", ok:false},
+    {pre:"ton.nom", dom:"@outlook.fr", ok:false},
+    {pre:"contact", dom:"@tonentreprise.com", ok:true},
+    {pre:"secretariat", dom:"@tonentreprise.com", ok:true},
+    {pre:"direction", dom:"@tonentreprise.com", ok:true}
+  ];
+  const t = document.getElementById("ticker"), addr = document.getElementById("addr"), mark = document.getElementById("mark");
+  function show(s){
+    addr.innerHTML = '<span class="pre"></span><span class="dom"></span>';
+    addr.querySelector(".pre").textContent = s.pre;
+    addr.querySelector(".dom").textContent = s.dom;
+    t.classList.toggle("ok", s.ok);
+    mark.innerHTML = '<svg class="ico" style="width:24px;height:24px"><use href="#' + (s.ok ? "i-ok" : "i-no") + '"/></svg>';
+    addr.classList.remove("swap"); void addr.offsetWidth; addr.classList.add("swap");
+  }
+  let reduce = false;
+  try { reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch(e) {}
+  if (reduce) { show(seq[4]); return; }
+  let i = 0;
+  function step(){ show(seq[i]); const d = seq[i].ok ? 2000 : 1500; i = (i + 1) % seq.length; setTimeout(step, d); }
+  step();
+})();
+</script>
+
+</body></html>

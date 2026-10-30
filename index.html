@@ -90,7 +90,10 @@ a{color:inherit}
 .hero .promise{font-family:var(--display);font-size:clamp(20px,2.4vw,25px);line-height:1.35;font-weight:700;margin:0;
   color:var(--ink);background:var(--surface);border:1px solid var(--line);border-left:6px solid #2988C1;border-radius:14px;padding:18px 22px;
   box-shadow:0 18px 36px -18px rgba(31,42,54,.35)}
-.hero .promise b{color:var(--accent)}
+.hero .promise p{margin:0 0 10px;font-size:.8em;color:var(--muted)}
+.hero .promise ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.hero .promise li{display:flex;align-items:center;gap:12px}
+.hero .promise li svg{width:22px;height:22px;flex:none;color:var(--go)}
 .from{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .from span{font-weight:600;color:var(--muted)}
 .from b{font-family:var(--display);font-size:clamp(28px,4vw,38px);font-weight:800}
@@ -234,7 +237,18 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
   .hero .promise{padding:16px 18px}
   .hero .btn,.final .btn{width:100%}
   .chain li,.steps li,.obj div{padding:20px}
-  .terms{grid-template-columns:1fr;gap:12px}
+  .terms{grid-template-columns:1fr;gap:10px}
+  .chain li{grid-template-columns:44px 1fr;column-gap:12px;row-gap:4px;padding:18px}
+  .chain li::before{grid-row:span 2;font-size:24px}
+  .steps{gap:10px}
+  .steps li{grid-template-columns:40px 1fr;column-gap:14px;row-gap:2px;padding:16px 18px}
+  .steps li::before{grid-row:span 2;width:40px;height:40px;font-size:18px}
+  .steps h3{font-size:18px}
+  .terms li{padding:14px 18px}
+  .obj{gap:10px}
+  .obj div{padding:18px}
+  .obj q{font-size:17px}
+  .faq{gap:10px}
   .with li{font-size:17px;padding:18px 20px}
   .obj q{font-size:18px}
   .pack{padding:22px 18px}
@@ -273,7 +287,15 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
       <p class="warn">Vos clients pensent que vous n'êtes pas sérieux.</p>
     </div>
     <div class="hero-sol">
-      <p class="promise">On vous fait votre <b>email pro</b> et votre <b>site</b>. Rapidement. <b>Tout est inclus pour 1 an.</b></p>
+      <div class="promise">
+        <p>On vous fait :</p>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Votre email pro</li>
+          <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Votre site web</li>
+          <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Rapidement</li>
+          <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Tout inclus pour 1 an</li>
+        </ul>
+      </div>
       <aside class="mail" aria-label="Exemple d'email professionnel">
         <div class="mail-bar" aria-hidden="true"><i></i><i></i><i></i></div>
         <div class="mail-body">
@@ -471,8 +493,8 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
 
 <script>
 /* ===== À RENSEIGNER ===== numéro WhatsApp qui reçoit les bons de commande */
-const WA_NUMBER = "22996204905"; /* format international sans + ni espaces */
-const WA_DISPLAY = "+229 96 20 49 05";
+const WA_NUMBER = "22962998781"; /* format international sans + ni espaces */
+const WA_DISPLAY = "+229 62 99 87 81";
 
 
 function waLink(msg){ return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg); }

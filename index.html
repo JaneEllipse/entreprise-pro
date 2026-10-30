@@ -138,6 +138,8 @@ section{padding-block:56px}
 .feat .no svg{color:var(--muted)}
 .delay{font-size:15px;color:var(--muted);margin:auto 0 0;padding-top:12px;border-top:1px dashed var(--line)}
 .delay b{color:var(--ink)}
+.eta{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:15px;padding:7px 14px;border-radius:999px}
+.eta svg{width:18px;height:18px;flex:none}
 .pack .btn{width:100%}
 .renew{margin:18px 0 0;font-size:15px;color:var(--muted);max-width:76ch}
 
@@ -265,6 +267,7 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="logo" viewBox="0 0 320 320"><path d="M160 4A156 156 0 0 1 316 160H160Z" fill="#F7D917"/><path d="M4 160A156 156 0 0 0 270 270L215 215A78 78 0 0 1 82 160Z" fill="#2988C1"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></symbol>
   <symbol id="i-ok" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-no" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
 </svg>
@@ -344,6 +347,7 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
         <p class="for">Pour l'indépendant</p>
         <div class="price"><b>65 000</b><span>FCFA TTC</span></div>
         <p class="allin">Tout inclus pour 1 an · TVA incluse</p>
+        <span class="eta"><svg aria-hidden="true"><use href="#i-clock"/></svg>Livré en 3 à 7 jours</span>
         <ul class="feat">
           <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>1 email pro</span></li>
           <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>Nom de domaine</span></li>
@@ -351,7 +355,7 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
           <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>1 mois de maintenance gratuit</span></li>
           <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>Aucun frais caché</span></li>
         </ul>
-        <p class="delay">Livré en <b>3 à 7 jours</b><br>Paiement : <b>en une fois à la commande</b></p>
+        <p class="delay">Paiement : <b>en une fois à la commande</b></p>
         <a class="btn btn-go js-book" data-pack="SOLO" data-desc="1 email pro + nom de domaine · 1 an" data-price="65 000" data-first="65 000" href="#packs">Je prends SOLO</a>
       </article>
 
@@ -360,6 +364,7 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
         <p class="for">Pour le cabinet ou la PME</p>
         <div class="price"><b>150 000</b><span>FCFA TTC</span></div>
         <p class="allin">Tout inclus pour 1 an · TVA incluse</p>
+        <span class="eta"><svg aria-hidden="true"><use href="#i-clock"/></svg>Livré en 3 à 7 jours</span>
         <ul class="feat">
           <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>5 emails pro</span></li>
           <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>Nom de domaine</span></li>
@@ -367,7 +372,7 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
           <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>1 mois de maintenance gratuit</span></li>
           <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>Aucun frais caché</span></li>
         </ul>
-        <p class="delay">Livré en <b>3 à 7 jours</b><br>Paiement : <b>en une fois à la commande</b></p>
+        <p class="delay">Paiement : <b>en une fois à la commande</b></p>
         <a class="btn btn-go js-book" data-pack="ÉQUIPE" data-desc="5 emails pro + nom de domaine · 1 an" data-price="150 000" data-first="150 000" href="#packs">Je prends ÉQUIPE</a>
       </article>
 
@@ -377,15 +382,17 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
         <p class="for">Pour exister sur Google</p>
         <div class="price"><b>300 000</b><span>FCFA TTC</span></div>
         <p class="allin">Tout inclus pour 1 an · TVA incluse</p>
+        <span class="eta"><svg aria-hidden="true"><use href="#i-clock"/></svg>Livré en 10 à 15 jours ouvrés</span>
         <ul class="feat">
           <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>1 email pro</span></li>
           <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>Nom de domaine</span></li>
           <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span><b>Site web 5 pages</b></span></li>
+          <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span><b>Fiche Google My Business</b></span></li>
           <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>1 mois de maintenance gratuit</span></li>
           <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>Aucun frais caché</span></li>
         </ul>
-        <p class="delay">Livré en <b>10 à 15 jours ouvrés</b><br>Paiement : <b>50 % à la commande, 50 % à la mise en ligne</b></p>
-        <a class="btn btn-go js-book" data-pack="VITRINE" data-desc="Site web 5 pages + 1 email pro + nom de domaine · 1 an" data-price="300 000" data-first="150 000 (50 %)" href="#packs">Je prends VITRINE</a>
+        <p class="delay">Paiement : <b>50 % à la commande, 50 % à la mise en ligne</b></p>
+        <a class="btn btn-go js-book" data-pack="VITRINE" data-desc="Site web 5 pages + fiche Google My Business + 1 email pro + nom de domaine · 1 an" data-price="300 000" data-first="150 000 (50 %)" href="#packs">Je prends VITRINE</a>
       </article>
     </div>
     <p class="renew">Les abonnements de la 1ère année sont offerts. À partir de la 2e année, vous les payez directement au fournisseur (nom de domaine, emails, hébergement du site). On vous prévient avant la date.</p>
@@ -436,6 +443,7 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
     <div class="faq">
       <details><summary>Je n'y connais rien en informatique. C'est un problème ?</summary><p>Non. On s'occupe de tout : le site, les adresses, l'installation. Vous nous donnez vos informations (logo, services, photos, contacts), on fait le reste.</p></details>
       <details><summary>Qu'est-ce qu'on met sur le site ?</summary><p>Qui vous êtes, ce que vous faites, vos réalisations et comment vous joindre. Jusqu'à 5 pages, lisibles sur téléphone.</p></details>
+      <details><summary>Je peux avoir l'adresse email sans le site ?</summary><p>Oui. Les packs SOLO (1 adresse) et ÉQUIPE (5 adresses) comprennent vos emails pro et votre nom de domaine, sans site. Si vous voulez un site plus tard, écrivez-nous.</p></details>
       <details><summary>Le nom de domaine, c'est quoi ?</summary><p>C'est le nom de votre entreprise sur internet, par exemple laourou.com. C'est ce qui s'écrit après le @ dans votre adresse.</p></details>
       <details><summary>Tout est à moi ?</summary><p>Oui. Le nom de domaine, les adresses email et le site sont enregistrés au nom de votre entreprise.</p></details>
       <details><summary>Je peux lire mes emails sur mon téléphone ?</summary><p>Oui. On installe tout sur votre téléphone et votre ordinateur.</p></details>

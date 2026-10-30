@@ -470,7 +470,7 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
     <label>Votre nom<input name="nom" required autocomplete="name"></label>
     <label>Nom de l'entreprise<input name="entreprise" required autocomplete="organization"></label>
     <label>Téléphone (WhatsApp)<input name="tel" type="tel" required autocomplete="tel"></label>
-    <label>Nom de domaine souhaité (facultatif)<input name="domaine" placeholder="votreentreprise.com"></label>
+    <label>Adresse email<input name="email" type="email" required autocomplete="email" placeholder="pour recevoir votre facture"></label>
     <p class="note">Une facture vous est remise pour chaque paiement.</p>
     <div class="row">
       <button class="btn btn-go" type="submit">Je valide ma commande</button>
@@ -514,13 +514,12 @@ form.addEventListener("submit", e => {
   const num = "BC-" + d.getFullYear() + "-" + String(Math.floor(Math.random()*9000)+1000);
   const date = d.toLocaleDateString("fr-FR");
   const esc = v => String(v).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-  const dom = f.get("domaine");
   const txt = "BON DE COMMANDE N° " + num + "\n" +
     "ELLIPSE FACTORY · Entreprise Pro\n" +
     "Date : " + date + "\n\n" +
     "Client : " + f.get("nom") + " · " + f.get("entreprise") + "\n" +
     "Tél. : " + f.get("tel") + "\n" +
-    (dom ? "Domaine souhaité : " + dom + "\n" : "") +
+    "Email : " + f.get("email") + "\n" +
     "\nPack " + pack.pack + " : " + pack.desc + "\n" +
     "Total : " + pack.price + " FCFA TTC (TVA incluse)\n" +
     "À payer à la commande : " + pack.first + " FCFA TTC\n\n" +
@@ -528,7 +527,7 @@ form.addEventListener("submit", e => {
   document.getElementById("bc").innerHTML =
     '<div class="bc-top"><div class="brand"><svg aria-hidden="true"><use href="#logo"/></svg><div>ELLIPSE <span>FACTORY</span><small>Entreprise Pro</small></div></div>' +
     '<div class="ref"><b>BON DE COMMANDE</b>N° ' + num + '<br>Date : ' + date + '</div></div>' +
-    '<div><h4>Client</h4><p>' + esc(f.get("nom")) + ' · ' + esc(f.get("entreprise")) + '<br>Tél. : ' + esc(f.get("tel")) + (dom ? '<br>Domaine souhaité : ' + esc(dom) : '') + '</p></div>' +
+    '<div><h4>Client</h4><p>' + esc(f.get("nom")) + ' · ' + esc(f.get("entreprise")) + '<br>Tél. : ' + esc(f.get("tel")) + '<br>Email : ' + esc(f.get("email")) + '</p></div>' +
     '<table><tr><th>Désignation</th><th class="num">Montant (FCFA TTC)</th></tr>' +
     '<tr><td>Pack ' + esc(pack.pack) + '<br><small>' + esc(pack.desc) + '</small></td><td class="num">' + pack.price + '</td></tr>' +
     '<tr class="tot"><td>Total TTC <small>(TVA 18 % incluse)</small></td><td class="num">' + pack.price + '</td></tr>' +

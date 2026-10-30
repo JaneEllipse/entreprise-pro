@@ -495,6 +495,8 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
 /* ===== À RENSEIGNER ===== numéro WhatsApp qui reçoit les bons de commande */
 const WA_NUMBER = "22962998781"; /* format international sans + ni espaces */
 const WA_DISPLAY = "+229 62 99 87 81";
+/* Adresse de l'application Web Apps Script du Google Sheet « Commandes Entreprise Pro ». Vide = pas d'enregistrement. */
+const SHEET_URL = "";
 
 
 function waLink(msg){ return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg); }
@@ -533,6 +535,12 @@ form.addEventListener("submit", e => {
     '<tr class="tot"><td>Total TTC <small>(TVA 18 % incluse)</small></td><td class="num">' + pack.price + '</td></tr>' +
     '<tr class="tot"><td>À payer à la commande</td><td class="num">' + pack.first + '</td></tr></table>' +
     '<p class="pay">Paiement : Mobile Money (Flooz / Mixx by Yas), virement ou espèces contre reçu.<br><b>Une facture vous est remise pour chaque paiement.</b></p>';
+  if (SHEET_URL) {
+    const n = v => String(v).split("(")[0].replace(/\D/g, "");
+    fetch(SHEET_URL, {method: "POST", mode: "no-cors", headers: {"Content-Type": "text/plain"},
+      body: JSON.stringify({num, pack: pack.pack, total: n(pack.price), first: n(pack.first),
+        nom: f.get("nom"), entreprise: f.get("entreprise"), tel: f.get("tel"), email: f.get("email")})}).catch(() => {});
+  }
   const link = waLink(txt);
   document.getElementById("bc-wa").href = link;
   form.hidden = true; done.hidden = false;

@@ -15,18 +15,18 @@
 :root{
   --bg:#F7F9FB; --surface:#FFFFFF; --ink:#1F2A36; --muted:#5A6678; --line:#DCE2EA;
   --accent:#1F74A8; --accent-soft:#EEF5FB; --go:#0E7A43; --go-ink:#FFFFFF; --bad:#B4413B; --bad-soft:#FBECEA;
-  --good-soft:#E5F4EC; --hl:#F7D917;
+  --good-soft:#E5F4EC; --hl:#F7D917; --cta:#1F74A8; --cta-ink:#FFFFFF;
   --display:"Libre Franklin", "Segoe UI", system-ui, sans-serif;
   --body:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0C1420; --surface:#131E2E; --ink:#E8EEF6; --muted:#9AA7B8; --line:#24324A;
   --accent:#5DB0E3; --accent-soft:#16283A; --go:#23A863; --go-ink:#06140C; --bad:#F08A80; --bad-soft:#2A1A1D;
-  --good-soft:#12291D; --hl:#F7D917; color-scheme:dark}}
+  --good-soft:#12291D; --hl:#F7D917; --cta:#5DB0E3; --cta-ink:#06121C; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0C1420; --surface:#131E2E; --ink:#E8EEF6; --muted:#9AA7B8; --line:#24324A;
   --accent:#5DB0E3; --accent-soft:#16283A; --go:#23A863; --go-ink:#06140C; --bad:#F08A80; --bad-soft:#2A1A1D;
-  --good-soft:#12291D; --hl:#F7D917; color-scheme:dark}
+  --good-soft:#12291D; --hl:#F7D917; --cta:#5DB0E3; --cta-ink:#06121C; color-scheme:dark}
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -40,7 +40,8 @@ a{color:inherit}
   font-weight:700;font-size:17px;text-decoration:none;border:2px solid transparent;transition:transform .15s ease, filter .15s ease}
 .btn:hover{transform:translateY(-1px);filter:brightness(1.05)}
 .btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-.btn-go{background:var(--go);color:var(--go-ink)}
+.btn-go{background:var(--cta);color:var(--cta-ink);box-shadow:0 8px 18px -8px rgba(31,116,168,.6)}
+.final .btn-go{background:var(--hl);color:#1F2A36;box-shadow:none}
 .ico{width:20px;height:20px;flex:none}
 
 .top{position:sticky;top:0;z-index:6;display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:12px;
@@ -54,8 +55,10 @@ a{color:inherit}
 .top a.small{font-weight:700;font-size:15px;text-decoration:none;color:var(--go-ink);background:var(--go);padding:9px 16px;border-radius:999px;white-space:nowrap}
 
 /* Hero */
-.hero{padding-block:28px 40px;display:grid;gap:22px;position:relative}
-.mail{position:absolute;right:0;top:36px;width:330px;background:var(--surface);border:1px solid var(--line);border-radius:16px;
+.hero{padding-block:28px 48px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:center}
+.hero-pb,.hero-sol{display:grid;gap:20px;min-width:0}
+.hero-sol .btn{width:100%}
+.mail{background:var(--surface);border:1px solid var(--line);border-radius:16px;
   box-shadow:0 24px 48px -18px rgba(31,42,54,.35);overflow:hidden;font-size:15px}
 .mail-bar{display:flex;gap:6px;padding:10px 14px;background:var(--bg);border-bottom:1px solid var(--line)}
 .mail-bar i{width:10px;height:10px;border-radius:50%;background:var(--line)}
@@ -63,16 +66,14 @@ a{color:inherit}
 .mail-row{color:var(--muted)}
 .mail-row b{color:var(--ink)}
 .mail-from{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
-.mail-from b{color:var(--go)}
-.mail-from svg{width:16px;height:16px;color:var(--go)}
+.mail-from b{color:var(--accent)}
+.mail-from svg{width:16px;height:16px;color:var(--accent)}
 .mail-txt{margin:4px 0 0;padding-top:10px;border-top:1px solid var(--line)}
 .mail-pj{display:inline-flex;gap:6px;align-items:center;font-size:14px;font-weight:600;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 10px;justify-self:start}
-.mail-offer{background:var(--good-soft);padding:14px 18px;display:grid;gap:10px}
-.mail-offer p{margin:0;font-weight:700}
-.mail-offer .btn{min-height:46px;font-size:16px}
+
 .trust{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:0;list-style:none;font-size:15px;font-weight:600;color:var(--muted)}
 .trust li{display:flex;align-items:center;gap:6px}
-.trust svg{width:16px;height:16px;color:var(--go)}
+.trust svg{width:16px;height:16px;color:var(--accent)}
 .hero h1{font-size:clamp(34px,6vw,60px);line-height:1.04;font-weight:800;max-width:18ch}
 .hero .lead2{font-family:var(--display);font-size:clamp(22px,3.4vw,32px);font-weight:700;margin:-6px 0 0;color:var(--muted)}
 .ticker{display:flex;align-items:center;gap:16px;background:var(--surface);border:3px solid var(--bad);border-radius:18px;padding:18px 22px;
@@ -80,17 +81,17 @@ a{color:inherit}
 .ticker.ok{border-color:var(--go);background:var(--good-soft)}
 .ticker .mark{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;flex:none;background:var(--bad);color:#FFFFFF}
 .ticker.ok .mark{background:var(--go);color:var(--go-ink)}
-.ticker .addr{font-family:var(--display);font-weight:800;font-size:clamp(20px,4vw,36px);overflow-wrap:anywhere;min-width:0;line-height:1.15}
+.ticker .addr{font-family:var(--display);font-weight:800;font-size:clamp(20px,3vw,30px);overflow-wrap:anywhere;min-width:0;line-height:1.15}
 .ticker .addr .pre{color:var(--muted);font-weight:700}
 .ticker .addr .dom{color:var(--bad)}
 .ticker.ok .addr .dom{color:var(--go)}
 .ticker .addr.swap{animation:pop .3s ease}
 @keyframes pop{from{opacity:.2;transform:translateY(6px)}to{opacity:1;transform:none}}
 .hero .warn{font-family:var(--display);font-size:clamp(26px,4vw,38px);line-height:1.15;font-weight:800;color:var(--bad);margin:0;max-width:24ch}
-.hero .promise{font-family:var(--display);font-size:clamp(20px,2.8vw,26px);line-height:1.35;font-weight:700;margin:0;max-width:34ch;
-  color:#FFFFFF;background:linear-gradient(135deg,#14955A,#0B6436);border-radius:16px;padding:18px 22px;
-  box-shadow:0 14px 28px -10px rgba(11,100,54,.55), inset 0 1px 0 rgba(255,255,255,.25);transform:rotate(-.6deg)}
-.hero .promise b{text-decoration:underline;text-decoration-color:#F7D917;text-decoration-thickness:3px;text-underline-offset:4px}
+.hero .promise{font-family:var(--display);font-size:clamp(20px,2.4vw,25px);line-height:1.35;font-weight:700;margin:0;
+  color:var(--ink);background:var(--surface);border:1px solid var(--line);border-left:6px solid #2988C1;border-radius:14px;padding:18px 22px;
+  box-shadow:0 18px 36px -18px rgba(31,42,54,.35)}
+.hero .promise b{text-decoration:underline;text-decoration-color:var(--hl);text-decoration-thickness:4px;text-underline-offset:4px}
 .from{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .from span{font-weight:600;color:var(--muted)}
 .from b{font-family:var(--display);font-size:clamp(28px,4vw,38px);font-weight:800}
@@ -108,8 +109,8 @@ section{padding-block:36px}
 
 /* With us */
 .with{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;list-style:none;margin:0;padding:0}
-.with li{background:var(--good-soft);border-radius:14px;padding:18px 20px;display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;font-size:18px;min-width:0}
-.with li svg{color:var(--go)}
+.with li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;font-size:18px;min-width:0}
+.with li svg{color:var(--accent)}
 .with li b{font-weight:700}
 
 /* Packs */
@@ -119,18 +120,17 @@ section{padding-block:36px}
 .pack.pick{margin-top:6px;border:2px solid var(--accent);box-shadow:0 10px 30px rgba(41,136,193,.15)}
 .badge{position:absolute;top:-13px;left:22px;background:var(--hl);color:#1F2A36;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 12px;border-radius:999px}
 .pack h3{font-size:26px;font-weight:800;display:flex;align-items:center;gap:10px}
-.dot{width:14px;height:14px;border-radius:50%;flex:none}
 .pack .for{margin:-6px 0 0;color:var(--muted);font-weight:600}
 .price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
 .price b{font-family:var(--display);font-size:clamp(36px,4.6vw,44px);font-weight:800;font-variant-numeric:tabular-nums;line-height:1}
 .price span{font-weight:600;color:var(--muted)}
-.allin{margin:-6px 0 0;font-size:15px;font-weight:700;color:var(--go)}
+.allin{margin:-6px 0 0;font-size:15px;font-weight:700;color:var(--accent)}
 .feat{list-style:none;margin:0;padding:0;display:grid;gap:9px;font-size:16px}
 .feat li{display:grid;grid-template-columns:20px 1fr;gap:8px;align-items:start}
 .feat li.no{color:var(--muted)}
 .feat svg{margin-top:3px}
-.feat .y svg{color:var(--go)}
-.feat .no svg{color:var(--bad)}
+.feat .y svg{color:var(--accent)}
+.feat .no svg{color:var(--muted)}
 .delay{font-size:15px;color:var(--muted);margin:auto 0 0;padding-top:12px;border-top:1px dashed var(--line)}
 .delay b{color:var(--ink)}
 .pack .btn{width:100%}
@@ -209,8 +209,8 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
   padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));display:none}
 .sticky .btn{width:100%}
 
-@media (max-width:1000px){.mail{display:none}}
 @media (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:24px}
   .packs,.chain{grid-template-columns:1fr}
   .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
   .sticky{display:block}
@@ -220,10 +220,12 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
   body{font-size:16.5px}
   section{padding-block:28px}
   .sec-head{margin-bottom:16px}
-  .hero{padding-block:18px 28px;gap:16px}
+  .hero{padding-block:18px 28px;gap:20px}
+  .hero-pb,.hero-sol{gap:16px}
+  .mail{display:none}
   .ticker{padding:14px 16px;gap:12px;min-height:76px}
   .ticker .mark{width:38px;height:38px}
-  .hero .promise{padding:16px 18px;transform:none}
+  .hero .promise{padding:16px 18px}
   .hero .btn,.final .btn{width:100%}
   .chain li,.steps li,.obj div{padding:16px}
   .with li{font-size:17px;padding:16px}
@@ -254,34 +256,34 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
   </header>
 
   <section class="hero" aria-labelledby="h1">
-    <aside class="mail" aria-label="Exemple d'email professionnel">
-      <div class="mail-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-      <div class="mail-body">
-        <div class="mail-row mail-from">De : <b>contact@votreentreprise.com</b><svg aria-hidden="true"><use href="#i-ok"/></svg></div>
-        <div class="mail-row">Objet : <b>Votre devis</b></div>
-        <p class="mail-txt">Bonjour, veuillez trouver ci-joint notre devis. Nous restons à votre disposition.</p>
-        <span class="mail-pj">📎 Devis.pdf</span>
+    <div class="hero-pb">
+      <h1 id="h1">Votre entreprise, c'est sérieux.</h1>
+      <p class="lead2">Mais votre email finit par…</p>
+      <div class="ticker" id="ticker" aria-live="off">
+        <span class="mark" id="mark"><svg class="ico" style="width:24px;height:24px"><use href="#i-no"/></svg></span>
+        <span class="addr" id="addr"><span class="pre">votre.nom</span><span class="dom">@gmail.com</span></span>
       </div>
-      <div class="mail-offer">
-        <p>Votre adresse pro en 3 à 7 jours.<br>Dès 65 000 FCFA TTC.</p>
-        <a class="btn btn-go" href="#packs">Je deviens pro</a>
-      </div>
-    </aside>
-    <h1 id="h1">Votre entreprise, c'est sérieux.</h1>
-    <p class="lead2">Mais votre email finit par…</p>
-    <div class="ticker" id="ticker" aria-live="off">
-      <span class="mark" id="mark"><svg class="ico" style="width:24px;height:24px"><use href="#i-no"/></svg></span>
-      <span class="addr" id="addr"><span class="pre">votre.nom</span><span class="dom">@gmail.com</span></span>
+      <p class="warn">Vos clients pensent que vous n'êtes pas sérieux.</p>
     </div>
-    <p class="warn">Vos clients pensent que vous n'êtes pas sérieux.</p>
-    <p class="promise">On vous fait votre <b>email pro</b> et votre <b>site</b>. Rapidement. <b>Tout est inclus pour 1 an.</b></p>
-    <div class="from"><span>À partir de</span><b>65 000 FCFA</b></div>
-    <div><a class="btn btn-go" href="#packs">Je deviens pro</a></div>
-    <ul class="trust">
-      <li><svg><use href="#i-ok"/></svg>+50 entreprises équipées</li>
-      <li><svg><use href="#i-ok"/></svg>Paiement Mobile Money</li>
-      <li><svg><use href="#i-ok"/></svg>TVA incluse, facture remise</li>
-    </ul>
+    <div class="hero-sol">
+      <p class="promise">On vous fait votre <b>email pro</b> et votre <b>site</b>. Rapidement. <b>Tout est inclus pour 1 an.</b></p>
+      <aside class="mail" aria-label="Exemple d'email professionnel">
+        <div class="mail-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="mail-body">
+          <div class="mail-row mail-from">De : <b>contact@votreentreprise.com</b><svg aria-hidden="true"><use href="#i-ok"/></svg></div>
+          <div class="mail-row">Objet : <b>Votre devis</b></div>
+          <p class="mail-txt">Bonjour, veuillez trouver ci-joint notre devis. Nous restons à votre disposition.</p>
+          <span class="mail-pj">📎 Devis.pdf</span>
+        </div>
+      </aside>
+      <div class="from"><span>À partir de</span><b>65 000 FCFA</b><span>TTC</span></div>
+      <a class="btn btn-go" href="#packs">Je deviens pro</a>
+      <ul class="trust">
+        <li><svg><use href="#i-ok"/></svg>+50 entreprises équipées</li>
+        <li><svg><use href="#i-ok"/></svg>Paiement Mobile Money</li>
+        <li><svg><use href="#i-ok"/></svg>TVA incluse, facture remise</li>
+      </ul>
+    </div>
   </section>
 
   <section aria-labelledby="h-pb">
@@ -322,7 +324,7 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
     <div class="sec-head"><h2 id="h-packs">Les packs</h2></div>
     <div class="packs">
       <article class="pack">
-        <h3><span class="dot" style="background:#0E7A43"></span>SOLO</h3>
+        <h3>SOLO</h3>
         <p class="for">Pour l'indépendant</p>
         <div class="price"><b>65 000</b><span>FCFA TTC</span></div>
         <p class="allin">Tout inclus pour 1 an · TVA incluse</p>
@@ -338,7 +340,7 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
       </article>
 
       <article class="pack">
-        <h3><span class="dot" style="background:#2988C1"></span>ÉQUIPE</h3>
+        <h3>ÉQUIPE</h3>
         <p class="for">Pour le cabinet ou la PME</p>
         <div class="price"><b>150 000</b><span>FCFA TTC</span></div>
         <p class="allin">Tout inclus pour 1 an · TVA incluse</p>
@@ -355,7 +357,7 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
 
       <article class="pack pick">
         <span class="badge">Recommandé</span>
-        <h3><span class="dot" style="background:#B4413B"></span>VITRINE</h3>
+        <h3>VITRINE</h3>
         <p class="for">Pour exister sur Google</p>
         <div class="price"><b>300 000</b><span>FCFA TTC</span></div>
         <p class="allin">Tout inclus pour 1 an · TVA incluse</p>

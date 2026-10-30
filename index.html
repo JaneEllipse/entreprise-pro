@@ -135,8 +135,12 @@ footer details p{margin:6px 0 0;line-height:1.6}
 /* Social proof */
 .proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0;padding:0;list-style:none}
 .proof li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:grid;gap:8px;min-width:0}
-.proof q{font-weight:600}
+.proof q{font-weight:600;quotes:"« " " »"}
+.proof li{align-content:space-between}
 .proof span{font-size:14px;color:var(--muted)}
+.more{margin-top:12px;background:none;border:0;padding:0}
+.more summary{color:var(--accent);margin-bottom:12px}
+.more .proof{margin-top:12px}
 .stat{margin:0 0 16px;font-weight:700}
 .stat b{font-family:var(--display);font-size:24px;color:var(--accent)}
 
@@ -228,13 +232,18 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
 
   <section aria-labelledby="h-proof">
     <div class="sec-head"><h2 id="h-proof">Ils nous font confiance</h2></div>
-    <!-- À REMPLACER : vrais avis clients (avec leur accord) -->
-    <p class="stat"><b>+50</b> entreprises équipées par Ellipse Factory</p>
     <ul class="proof">
-      <li><q>Avis client à remplacer.</q><span>Prénom N., Entreprise, Ville</span></li>
-      <li><q>Avis client à remplacer.</q><span>Prénom N., Entreprise, Ville</span></li>
-      <li><q>Avis client à remplacer.</q><span>Prénom N., Entreprise, Ville</span></li>
+      <li><q>Avant, j'utilisais mon Gmail pour envoyer les devis. Maintenant, j'ai une adresse avec le nom de mon entreprise. C'est beaucoup plus professionnel. Et ils ont tout installé pour moi.</q><span>Client Entreprise Pro</span></li>
+      <li><q>Maintenant, quand un client me demande le site de mon entreprise, j'ai quelque chose à lui envoyer. Avant, je n'avais rien. Le site est simple, mais il présente bien nos activités.</q><span>Client Entreprise Pro</span></li>
+      <li><q>Moi, je ne connais pas trop ces histoires de site internet. Je leur ai envoyé les informations de mon entreprise et ils se sont occupés du reste. Franchement, ça m'a arrangé.</q><span>Client Entreprise Pro</span></li>
     </ul>
+    <details class="more"><summary>Voir 3 autres avis</summary>
+      <ul class="proof">
+        <li><q>Je pensais que faire un site et avoir des emails professionnels allait coûter beaucoup plus cher. Finalement, j'ai pu faire les deux avec le même budget.</q><span>Client Entreprise Pro</span></li>
+        <li><q>Ce que j'ai apprécié, c'est qu'ils ont pris le temps de m'expliquer. Même pour utiliser mon email sur le téléphone, ils m'ont aidé.</q><span>Client Entreprise Pro</span></li>
+        <li><q>Travail bien fait. J'ai reçu mon site et mes adresses email comme convenu. Rien à dire.</q><span>Client Entreprise Pro</span></li>
+      </ul>
+    </details>
   </section>
 
   <section id="packs" aria-labelledby="h-packs">

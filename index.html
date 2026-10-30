@@ -1,27 +1,27 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Entreprise Pro · Ellipsefactory</title>
+<title>Entreprise Pro · Ellipse Factory</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Entreprise Pro par Ellipsefactory : ton email pro et ton site web, faits pour toi. Tout inclus pour 1 an, à partir de 65 000 FCFA.">
+<meta name="description" content="Entreprise Pro par Ellipse Factory : ton email pro et ton site web, faits pour toi. Tout inclus pour 1 an, à partir de 65 000 FCFA.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap">
 <style>
 /* Layout: one column. Hero = rotating address (free mail ✗ → company domain ✓); problem → solution → 3 packs → 4 steps → objections → final CTA. */
 :root{
-  --bg:#F5F7FA; --surface:#FFFFFF; --ink:#0F1C2E; --muted:#5A6678; --line:#DCE2EA;
-  --accent:#1747C9; --accent-soft:#E6ECFB; --go:#0E7A43; --go-ink:#FFFFFF; --bad:#B4413B; --bad-soft:#FBECEA;
-  --good-soft:#E5F4EC; --hl:#F3B21B;
+  --bg:#F7F9FB; --surface:#FFFFFF; --ink:#1F2A36; --muted:#5A6678; --line:#DCE2EA;
+  --accent:#1F74A8; --accent-soft:#EEF5FB; --go:#0E7A43; --go-ink:#FFFFFF; --bad:#B4413B; --bad-soft:#FBECEA;
+  --good-soft:#E5F4EC; --hl:#F7D917;
   --display:"Libre Franklin", "Segoe UI", system-ui, sans-serif;
   --body:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0C1420; --surface:#131E2E; --ink:#E8EEF6; --muted:#9AA7B8; --line:#24324A;
-  --accent:#7FA2FF; --accent-soft:#1A2A4A; --go:#23A863; --go-ink:#06140C; --bad:#F08A80; --bad-soft:#2A1A1D;
-  --good-soft:#12291D; --hl:#F3B21B; color-scheme:dark}}
+  --accent:#5DB0E3; --accent-soft:#16283A; --go:#23A863; --go-ink:#06140C; --bad:#F08A80; --bad-soft:#2A1A1D;
+  --good-soft:#12291D; --hl:#F7D917; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0C1420; --surface:#131E2E; --ink:#E8EEF6; --muted:#9AA7B8; --line:#24324A;
-  --accent:#7FA2FF; --accent-soft:#1A2A4A; --go:#23A863; --go-ink:#06140C; --bad:#F08A80; --bad-soft:#2A1A1D;
-  --good-soft:#12291D; --hl:#F3B21B; color-scheme:dark}
+  --accent:#5DB0E3; --accent-soft:#16283A; --go:#23A863; --go-ink:#06140C; --bad:#F08A80; --bad-soft:#2A1A1D;
+  --good-soft:#12291D; --hl:#F7D917; color-scheme:dark}
 
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;
@@ -83,7 +83,7 @@ section{padding-block:36px}
 .packs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
 .pack{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px 22px;display:flex;flex-direction:column;gap:14px;min-width:0;position:relative}
 .pack.pick{border:2px solid var(--accent)}
-.badge{position:absolute;top:-13px;left:22px;background:var(--hl);color:#1E1500;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 12px;border-radius:999px}
+.badge{position:absolute;top:-13px;left:22px;background:var(--hl);color:#1F2A36;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 12px;border-radius:999px}
 .pack h3{font-size:26px;font-weight:800;display:flex;align-items:center;gap:10px}
 .dot{width:14px;height:14px;border-radius:50%;flex:none}
 .pack .for{margin:-6px 0 0;color:var(--muted);font-weight:600}
@@ -128,7 +128,9 @@ details p{margin:10px 0 0;color:var(--muted)}
 footer{font-size:13px;color:var(--muted);padding-block:0 32px;display:grid;gap:10px}
 footer details{background:none;border:0;padding:0}
 footer details p{margin:6px 0 0;line-height:1.6}
-.brand small{display:block;font-family:var(--body);font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.02em}
+.brand{display:flex;align-items:center;gap:10px;letter-spacing:.02em}
+.brand svg{width:34px;height:34px;flex:none}
+.brand small{display:block;letter-spacing:0;font-family:var(--body);font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.02em}
 
 /* Social proof */
 .proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0;padding:0;list-style:none}
@@ -148,7 +150,19 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
 .dlg .note{margin:0;font-size:14px;color:var(--muted)}
 .dlg .row{display:flex;gap:10px;flex-wrap:wrap}
 .btn-ghost{background:none;color:var(--ink);border-color:var(--line)}
-.bc{border:1px dashed var(--line);border-radius:12px;padding:14px 16px;white-space:pre-wrap;font-size:15px;margin:0;font-family:var(--body)}
+.bc{border:1px solid var(--line);border-radius:12px;padding:16px;font-size:15px;display:grid;gap:12px}
+.bc-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.bc-top .brand{font-size:15px}.bc-top .brand svg{width:28px;height:28px}
+.bc-top .ref{text-align:right;font-size:13px;color:var(--muted)}
+.bc-top .ref b{display:block;font-family:var(--display);font-size:16px;color:var(--accent)}
+.bc h4{margin:0;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.bc p{margin:2px 0 0}
+.bc table{width:100%;border-collapse:collapse}
+.bc th{background:#2988C1;color:#fff;text-align:left;font-size:13px;padding:6px 8px}
+.bc td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+.bc .num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.bc .tot td{border:0;font-weight:700}
+.bc .pay{font-size:13px;color:var(--muted)}
 @media print{body>*:not(dialog){display:none!important}dialog{position:static;width:auto}.dlg .row,.dlg .note.hide-print{display:none}}
 
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:5;background:var(--surface);border-top:1px solid var(--line);
@@ -168,13 +182,14 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo" viewBox="0 0 320 320"><path d="M160 4A156 156 0 0 1 316 160H160Z" fill="#F7D917"/><path d="M4 160A156 156 0 0 0 270 270L215 215A78 78 0 0 1 82 160Z" fill="#2988C1"/></symbol>
   <symbol id="i-ok" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-no" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
 </svg>
 
 <div class="wrap">
   <header class="top">
-    <div class="brand">Ellipse<span>factory</span><small>Entreprise Pro</small></div>
+    <div class="brand"><svg aria-hidden="true"><use href="#logo"/></svg><div>ELLIPSE <span>FACTORY</span><small>Entreprise Pro</small></div></div>
     <a class="small js-wa" data-msg="Bonjour, j'ai une question sur Entreprise Pro." href="#packs">Une question ? WhatsApp</a>
   </header>
 
@@ -214,7 +229,7 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
   <section aria-labelledby="h-proof">
     <div class="sec-head"><h2 id="h-proof">Ils nous font confiance</h2></div>
     <!-- À REMPLACER : chiffre réel et vrais avis clients (avec leur accord) -->
-    <p class="stat"><b>+XX</b> entreprises équipées par Ellipsefactory</p>
+    <p class="stat"><b>+XX</b> entreprises équipées par Ellipse Factory</p>
     <ul class="proof">
       <li><q>Avis client à remplacer.</q><span>Prénom N., Entreprise, Ville</span></li>
       <li><q>Avis client à remplacer.</q><span>Prénom N., Entreprise, Ville</span></li>
@@ -238,11 +253,11 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
           <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>Aucun frais caché</span></li>
         </ul>
         <p class="delay">Livré en <b>3 à 7 jours</b><br>Paiement : <b>en une fois à la commande</b></p>
-        <a class="btn btn-go js-book" data-pack="SOLO (65 000 FCFA)" href="#packs">Je prends SOLO</a>
+        <a class="btn btn-go js-book" data-pack="SOLO" data-desc="1 email pro + nom de domaine · 1 an" data-price="65 000" data-first="65 000" href="#packs">Je prends SOLO</a>
       </article>
 
       <article class="pack">
-        <h3><span class="dot" style="background:#1747C9"></span>ÉQUIPE</h3>
+        <h3><span class="dot" style="background:#2988C1"></span>ÉQUIPE</h3>
         <p class="for">Pour le cabinet ou la PME</p>
         <div class="price"><b>150 000</b><span>FCFA</span></div>
         <p class="allin">Tout inclus pour 1 an</p>
@@ -254,7 +269,7 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
           <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>Aucun frais caché</span></li>
         </ul>
         <p class="delay">Livré en <b>3 à 7 jours</b><br>Paiement : <b>en une fois à la commande</b></p>
-        <a class="btn btn-go js-book" data-pack="ÉQUIPE (150 000 FCFA)" href="#packs">Je prends ÉQUIPE</a>
+        <a class="btn btn-go js-book" data-pack="ÉQUIPE" data-desc="5 emails pro + nom de domaine · 1 an" data-price="150 000" data-first="150 000" href="#packs">Je prends ÉQUIPE</a>
       </article>
 
       <article class="pack pick">
@@ -271,7 +286,7 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
           <li class="y"><svg class="ico"><use href="#i-ok"/></svg><span>Aucun frais caché</span></li>
         </ul>
         <p class="delay">Livré en <b>10 à 15 jours ouvrés</b><br>Paiement : <b>50 % à la commande, 50 % à la mise en ligne</b></p>
-        <a class="btn btn-go js-book" data-pack="VITRINE (300 000 FCFA)" href="#packs">Je prends VITRINE</a>
+        <a class="btn btn-go js-book" data-pack="VITRINE" data-desc="Site web 5 pages + 1 email pro + nom de domaine · 1 an" data-price="300 000" data-first="150 000 (50 %)" href="#packs">Je prends VITRINE</a>
       </article>
     </div>
     <p class="renew">Les abonnements de la 1ère année sont offerts. À partir de la 2e année, tu les paies directement au fournisseur (nom de domaine, emails, hébergement du site). On te prévient avant la date.</p>
@@ -297,7 +312,7 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
     <div class="sec-head"><h2 id="h-obj">Tu hésites ?</h2></div>
     <div class="obj">
       <div><q>Mon Gmail suffit.</q><p>Non. Tes clients voient la différence.</p></div>
-      <div><q>Je suis petit.</q><p>Justement. Tu dois faire sérieux.</p></div>
+      <div><q>Mon entreprise est petite.</q><p>Justement. Elle doit faire sérieux.</p></div>
       <div><q>Je ferai ça plus tard.</q><p>Tu perds des clients en attendant.</p></div>
       <div><q>Je ne connais rien en technique.</q><p>Pas besoin. On s'occupe de tout.</p></div>
     </div>
@@ -324,19 +339,14 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
   </section>
 
   <footer>
-    <p style="margin:0">Entreprise Pro est un service Ellipsefactory · Prix en FCFA. La prestation et les abonnements aux outils de la 1ère année sont inclus. À partir de la 2e année, les abonnements sont payés directement au fournisseur.</p>
-    <!-- À COMPLÉTER : informations légales réelles -->
+    <p style="margin:0">Entreprise Pro est un service Ellipse Factory · Prix en FCFA. La prestation et les abonnements aux outils de la 1ère année sont inclus. À partir de la 2e année, les abonnements sont payés directement au fournisseur.</p>
     <details><summary>Mentions légales</summary>
-      <p><b>Éditeur :</b> Ellipsefactory, [forme juridique] au capital de [montant] FCFA<br>
-      <b>RCCM :</b> [numéro] · <b>NCC :</b> [numéro]<br>
-      <b>Siège :</b> [adresse, ville, pays]<br>
-      <b>Contact :</b> [email] · <span class="js-wa-display"></span><br>
-      <b>Responsable de la publication :</b> [nom]<br>
-      <b>Hébergeur :</b> [nom, adresse]</p>
-      <p><b>Données personnelles :</b> les informations du bon de commande servent uniquement à traiter votre commande. Elles ne sont ni vendues ni partagées. Pour les modifier ou les supprimer, écrivez-nous.</p>
-      <p><b>Facturation :</b> une facture est émise pour chaque paiement.</p>
+      <p><b>ELLIPSE FACTORY</b>, agence de communication &amp; production audiovisuelle.<br>
+      Lomé, Togo. Léo 2000, non loin de l'Antigang.<br>
+      Tél. : +228 90 87 24 38 · ellipsetime671@gmail.com</p>
+      <p>Vos informations servent seulement à traiter votre commande. Elles ne sont jamais partagées. Une facture est remise pour chaque paiement.</p>
     </details>
-    <p style="margin:0">© <span id="yr"></span> Ellipsefactory</p>
+    <p style="margin:0">© <span id="yr"></span> Ellipse Factory</p>
   </footer>
 </div>
 
@@ -356,7 +366,7 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
   </form>
   <div class="dlg" id="order-done" hidden>
     <h2>Commande validée</h2>
-    <pre class="bc" id="bc"></pre>
+    <div class="bc" id="bc"></div>
     <p class="note">WhatsApp s'ouvre avec votre bon de commande : appuyez sur <b>Envoyer</b> pour nous le transmettre. On vous rappelle pour confirmer. Vous recevrez une facture à chaque paiement.</p>
     <div class="row">
       <a class="btn btn-go" id="bc-wa" target="_blank" rel="noopener">Envoyer sur WhatsApp</a>
@@ -378,27 +388,39 @@ function waLink(msg){ return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURI
 
 /* Commande : formulaire → bon de commande affiché + envoyé sur WhatsApp */
 const dlg = document.getElementById("order"), form = document.getElementById("order-form"), done = document.getElementById("order-done");
-let pack = "";
+let pack = {};
 document.querySelectorAll(".js-book").forEach(a => a.addEventListener("click", e => {
-  e.preventDefault(); pack = a.dataset.pack;
-  document.getElementById("o-pack").textContent = pack;
+  e.preventDefault(); pack = a.dataset;
+  document.getElementById("o-pack").textContent = pack.pack + " (" + pack.price + " FCFA)";
   form.hidden = false; done.hidden = true; dlg.showModal();
 }));
 dlg.querySelectorAll("[data-close]").forEach(b => b.addEventListener("click", () => dlg.close()));
 form.addEventListener("submit", e => {
   e.preventDefault();
   const f = new FormData(form), d = new Date();
-  const num = "BC-" + d.toISOString().slice(0,10).replace(/-/g,"") + "-" + String(Math.floor(Math.random()*9000)+1000);
-  const txt = "BON DE COMMANDE " + num + "\n" +
-    "Ellipsefactory · Entreprise Pro\n" +
-    "Date : " + d.toLocaleDateString("fr-FR") + "\n\n" +
-    "Pack : " + pack + "\n" +
-    "Nom : " + f.get("nom") + "\n" +
-    "Entreprise : " + f.get("entreprise") + "\n" +
-    "Téléphone : " + f.get("tel") + "\n" +
-    (f.get("domaine") ? "Domaine souhaité : " + f.get("domaine") + "\n" : "") +
-    "\nUne facture sera remise pour chaque paiement.";
-  document.getElementById("bc").textContent = txt;
+  const num = "BC-" + d.getFullYear() + "-" + String(Math.floor(Math.random()*9000)+1000);
+  const date = d.toLocaleDateString("fr-FR");
+  const esc = v => String(v).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const dom = f.get("domaine");
+  const txt = "BON DE COMMANDE N° " + num + "\n" +
+    "ELLIPSE FACTORY · Entreprise Pro\n" +
+    "Date : " + date + "\n\n" +
+    "Client : " + f.get("nom") + " · " + f.get("entreprise") + "\n" +
+    "Tél. : " + f.get("tel") + "\n" +
+    (dom ? "Domaine souhaité : " + dom + "\n" : "") +
+    "\nPack " + pack.pack + " : " + pack.desc + "\n" +
+    "Total : " + pack.price + " FCFA\n" +
+    "À payer à la commande : " + pack.first + " FCFA\n\n" +
+    "Une facture sera remise pour chaque paiement.";
+  document.getElementById("bc").innerHTML =
+    '<div class="bc-top"><div class="brand"><svg aria-hidden="true"><use href="#logo"/></svg><div>ELLIPSE <span>FACTORY</span><small>Entreprise Pro</small></div></div>' +
+    '<div class="ref"><b>BON DE COMMANDE</b>N° ' + num + '<br>Date : ' + date + '</div></div>' +
+    '<div><h4>Client</h4><p>' + esc(f.get("nom")) + ' · ' + esc(f.get("entreprise")) + '<br>Tél. : ' + esc(f.get("tel")) + (dom ? '<br>Domaine souhaité : ' + esc(dom) : '') + '</p></div>' +
+    '<table><tr><th>Désignation</th><th class="num">Montant (FCFA)</th></tr>' +
+    '<tr><td>Pack ' + esc(pack.pack) + '<br><small>' + esc(pack.desc) + '</small></td><td class="num">' + pack.price + '</td></tr>' +
+    '<tr class="tot"><td>Total</td><td class="num">' + pack.price + '</td></tr>' +
+    '<tr class="tot"><td>À payer à la commande</td><td class="num">' + pack.first + '</td></tr></table>' +
+    '<p class="pay">Paiement : Mobile Money (Flooz / Mixx by Yas), virement ou espèces contre reçu.<br><b>Une facture vous est remise pour chaque paiement.</b></p>';
   const link = waLink(txt);
   document.getElementById("bc-wa").href = link;
   form.hidden = true; done.hidden = false;

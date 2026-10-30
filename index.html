@@ -100,11 +100,14 @@ section{padding-block:36px}
 .sec-head h2{font-size:clamp(26px,4vw,38px);font-weight:800}
 
 /* Problem */
-.chain{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;list-style:none;margin:0;padding:0}
-.chain li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:8px;min-width:0;align-content:start}
-.chain li b{font-family:var(--display);font-size:20px}
+.chain{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;list-style:none;margin:0;padding:0;counter-reset:pb}
+.chain li:nth-child(-n+3){grid-column:span 2}
+.chain li:nth-child(n+4){grid-column:span 3}
+.chain li{counter-increment:pb;background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--bad);border-radius:14px;padding:20px;display:grid;gap:8px;min-width:0;align-content:start}
+.chain li::before{content:"0" counter(pb);font-family:var(--display);font-weight:800;font-size:28px;line-height:1;color:var(--bad)}
+.chain li b{font-family:var(--display);font-size:19px;line-height:1.3}
 .chain li span{color:var(--muted)}
-.punch{margin:20px 0 0;font-family:var(--display);font-size:clamp(22px,3.2vw,30px);font-weight:800;color:var(--bad)}
+.punch{margin:24px 0 0;line-height:1.25;font-family:var(--display);font-size:clamp(22px,3.2vw,30px);font-weight:800;color:var(--bad)}
 
 /* With us */
 .with{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;list-style:none;margin:0;padding:0}
@@ -211,6 +214,7 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
 @media (max-width:900px){
   .hero{grid-template-columns:1fr;gap:24px}
   .packs,.chain{grid-template-columns:1fr}
+  .chain li:nth-child(n){grid-column:auto}
   .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
   .sticky{display:block}
   body{padding-bottom:84px}
@@ -256,8 +260,8 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
 
   <section class="hero" aria-labelledby="h1">
     <div class="hero-pb">
-      <h1 id="h1">Votre entreprise, c'est sérieux.</h1>
-      <p class="lead2">Mais votre email finit par…</p>
+      <h1 id="h1">Votre entreprise est sérieuse.</h1>
+      <p class="lead2">Mais votre Gmail dit le contraire.</p>
       <div class="ticker" id="ticker" aria-live="off">
         <span class="mark" id="mark"><svg class="ico" style="width:24px;height:24px"><use href="#i-no"/></svg></span>
         <span class="addr" id="addr"><span class="pre">votre.nom</span><span class="dom">@gmail.com</span></span>
@@ -271,7 +275,6 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
         <div class="mail-body">
           <div class="mail-row mail-from">De : <b>contact@votreentreprise.com</b><svg aria-hidden="true"><use href="#i-ok"/></svg></div>
           <div class="mail-row">Objet : <b>Votre devis</b></div>
-          <p class="mail-txt">Bonjour, veuillez trouver ci-joint notre devis. Nous restons à votre disposition.</p>
           <span class="mail-pj">📎 Devis.pdf</span>
         </div>
       </aside>
@@ -286,37 +289,25 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
   </section>
 
   <section aria-labelledby="h-pb">
-    <div class="sec-head"><h2 id="h-pb">Ce qui se passe quand vous n'avez pas d'email pro ni de site</h2></div>
+    <div class="sec-head"><h2 id="h-pb">Ce qui se passe quand vous n'avez ni email pro, ni site web</h2></div>
     <ol class="chain">
-      <li><b>Le client reçoit votre devis.</b><span>Il doute.</span></li>
-      <li><b>Il vous cherche sur Google.</b><span>Il ne trouve rien.</span></li>
-      <li><b>Il va chez votre concurrent.</b><span>Et vous ne le saurez jamais.</span></li>
+      <li><b>On pense que votre entreprise est petite et travaille dans l'informel.</b></li>
+      <li><b>On ne vous prend pas au sérieux.</b><span>Même si vous faites du bon travail.</span></li>
+      <li><b>Vous passez pour un amateur.</b><span>Alors que vous avez des années d'expérience.</span></li>
+      <li><b>Vous devez toujours convaincre les gens que votre entreprise est sérieuse.</b><span>Parce que rien ne le montre.</span></li>
+      <li><b>Vos clients choisissent vos concurrents.</b><span>Même quand ils ne travaillent pas mieux que vous.</span></li>
     </ol>
-    <p class="punch">Vous perdez des clients. Et vous ne le savez même pas.</p>
+    <p class="punch">Le problème, ce n'est pas forcément votre travail.<br>C'est l'image que vous donnez de votre entreprise.</p>
   </section>
 
   <section aria-labelledby="h-with">
-    <div class="sec-head"><h2 id="h-with">Avec nous</h2></div>
+    <div class="sec-head"><h2 id="h-with">On règle ça pour vous.</h2></div>
     <ul class="with">
       <li><svg class="ico"><use href="#i-ok"/></svg><span>Vos adresses : <b>contact@votreentreprise.com</b>, <b>secretariat@votreentreprise.com</b></span></li>
       <li><svg class="ico"><use href="#i-ok"/></svg><span>Votre site : <b>on vous trouve sur Google quand on cherche votre nom</b></span></li>
       <li><svg class="ico"><use href="#i-ok"/></svg><span>Vous faites <b>sérieux</b> dès le premier message</span></li>
       <li><svg class="ico"><use href="#i-ok"/></svg><span><b>Vous ne touchez à rien.</b> On fait tout.</span></li>
     </ul>
-  </section>
-
-  <section id="avis" aria-labelledby="h-proof">
-    <div class="sec-head"><h2 id="h-proof">Ils nous font confiance</h2><p class="stat"><b>+50</b> entreprises équipées en Afrique de l'Ouest</p></div>
-    <div class="marquee">
-      <ul class="proof" id="proof">
-        <li><q>Avant, j'utilisais mon Gmail pour envoyer les devis. Maintenant, j'ai une adresse avec le nom de mon entreprise. C'est beaucoup plus professionnel. Et ils ont tout installé pour moi.</q><span data-i="K">Koffi M., entrepreneur, Lomé</span></li>
-        <li><q>Maintenant, quand un client me demande le site de mon entreprise, j'ai quelque chose à lui envoyer. Avant, je n'avais rien. Le site est simple, mais il présente bien nos activités.</q><span data-i="A">Adama C., BTP, Abidjan</span></li>
-        <li><q>Moi, je ne connais pas trop ces histoires de site internet. Je leur ai envoyé les informations de mon entreprise et ils se sont occupés du reste. Franchement, ça m'a arrangé.</q><span data-i="A">Aïcha S., esthéticienne, Cotonou</span></li>
-        <li><q>Je pensais que faire un site et avoir des emails professionnels allait coûter beaucoup plus cher. Finalement, j'ai pu faire les deux avec le même budget.</q><span data-i="M">Mamadou D., gérant de PME, Dakar</span></li>
-        <li><q>Ce que j'ai apprécié, c'est qu'ils ont pris le temps de m'expliquer. Même pour utiliser mon email sur le téléphone, ils m'ont aidé.</q><span data-i="F">Fatoumata T., consultante, Bamako</span></li>
-        <li><q>Travail bien fait. J'ai reçu mon site et mes adresses email comme convenu. Rien à dire.</q><span data-i="S">Serge O., directeur de cabinet, Ouagadougou</span></li>
-      </ul>
-    </div>
   </section>
 
   <section id="packs" aria-labelledby="h-packs">
@@ -374,6 +365,20 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
     <p class="renew">Les abonnements de la 1ère année sont offerts. À partir de la 2e année, vous les payez directement au fournisseur (nom de domaine, emails, hébergement du site). On vous prévient avant la date.</p>
   </section>
 
+  <section id="avis" aria-labelledby="h-proof">
+    <div class="sec-head"><h2 id="h-proof">Ils nous font confiance</h2><p class="stat"><b>+50</b> entreprises équipées en Afrique de l'Ouest</p></div>
+    <div class="marquee">
+      <ul class="proof" id="proof">
+        <li><q>Avant, j'utilisais mon Gmail pour envoyer les devis. Maintenant, j'ai une adresse avec le nom de mon entreprise. C'est beaucoup plus professionnel. Et ils ont tout installé pour moi.</q><span data-i="K">Koffi M., entrepreneur, Lomé</span></li>
+        <li><q>Maintenant, quand un client me demande le site de mon entreprise, j'ai quelque chose à lui envoyer. Avant, je n'avais rien. Le site est simple, mais il présente bien nos activités.</q><span data-i="A">Adama C., BTP, Abidjan</span></li>
+        <li><q>Moi, je ne connais pas trop ces histoires de site internet. Je leur ai envoyé les informations de mon entreprise et ils se sont occupés du reste. Franchement, ça m'a arrangé.</q><span data-i="A">Aïcha S., esthéticienne, Cotonou</span></li>
+        <li><q>Je pensais que faire un site et avoir des emails professionnels allait coûter beaucoup plus cher. Finalement, j'ai pu faire les deux avec le même budget.</q><span data-i="M">Mamadou D., gérant de PME, Dakar</span></li>
+        <li><q>Ce que j'ai apprécié, c'est qu'ils ont pris le temps de m'expliquer. Même pour utiliser mon email sur le téléphone, ils m'ont aidé.</q><span data-i="F">Fatoumata T., consultante, Bamako</span></li>
+        <li><q>Travail bien fait. J'ai reçu mon site et mes adresses email comme convenu. Rien à dire.</q><span data-i="S">Serge O., directeur de cabinet, Ouagadougou</span></li>
+      </ul>
+    </div>
+  </section>
+
   <section aria-labelledby="h-steps">
     <div class="sec-head"><h2 id="h-steps">Comment commander</h2></div>
     <ol class="steps">
@@ -425,7 +430,7 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
     <details><summary>Mentions légales</summary>
       <p><b>ELLIPSE FACTORY</b>, agence de communication &amp; production audiovisuelle.<br>
       Lomé, Togo. Léo 2000, non loin de l'Antigang.<br>
-      Tél. : +228 90 87 24 38 · ellipsetime671@gmail.com</p>
+      Tél. / WhatsApp : +228 90 87 24 38</p>
       <p>Vos informations servent seulement à traiter votre commande. Elles ne sont jamais partagées. Une facture est remise pour chaque paiement.</p>
     </details>
     <p style="margin:0">© <span id="yr"></span> Ellipse Factory</p>

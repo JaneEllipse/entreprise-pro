@@ -107,9 +107,9 @@ section{padding-block:56px}
 .chain li:nth-child(-n+3){grid-column:span 2}
 .chain li:nth-child(n+4){grid-column:span 3}
 .chain li{counter-increment:pb;background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--bad);border-radius:14px;padding:24px;display:grid;gap:10px;min-width:0;align-content:start}
-.chain li::before{content:"0" counter(pb);font-family:var(--display);font-weight:800;font-size:28px;line-height:1;color:var(--bad)}
-.chain li b{font-family:var(--display);font-size:19px;line-height:1.3}
-.chain li span{color:var(--muted)}
+.chain li::before{content:"0" counter(pb);font-family:var(--display);font-weight:700;font-size:14px;line-height:1;color:var(--muted);letter-spacing:.06em}
+.chain li b{font-family:var(--display);font-size:21px;line-height:1.3}
+.chain li span{color:var(--muted);font-size:16px}
 .punch{margin:24px 0 0;line-height:1.25;font-family:var(--display);font-size:clamp(22px,3.2vw,30px);font-weight:800;color:var(--bad)}
 
 /* With us */
@@ -238,8 +238,8 @@ dialog::backdrop{background:rgba(8,14,24,.6)}
   .hero .btn,.final .btn{width:100%}
   .chain li,.steps li,.obj div{padding:20px}
   .terms{grid-template-columns:1fr;gap:10px}
-  .chain li{grid-template-columns:44px 1fr;column-gap:12px;row-gap:4px;padding:18px}
-  .chain li::before{grid-row:span 2;font-size:24px}
+  .chain li{padding:18px 20px;gap:6px}
+  .chain li b{font-size:19px}
   .steps{gap:10px}
   .steps li{grid-template-columns:40px 1fr;column-gap:14px;row-gap:2px;padding:16px 18px}
   .steps li::before{grid-row:span 2;width:40px;height:40px;font-size:18px}

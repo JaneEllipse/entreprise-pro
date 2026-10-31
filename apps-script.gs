@@ -25,3 +25,8 @@ function doPost(e) {
   );
   return ContentService.createTextOutput("ok");
 }
+
+// Ouvrir l'adresse du script dans un navigateur affiche ce message : sert à vérifier que le déploiement est accessible.
+function doGet() {
+  return ContentService.createTextOutput("OK - le script des commandes est actif.");
+}
